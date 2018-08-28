@@ -1,0 +1,31 @@
+This is just a random specification list based on different user requirements, which can also be considered as User Stories in an informal format.
+
+
+System Admin (Root user)
+------------------------
+* Full Functionality.
+
+
+Students Functions
+------------------
+* View Profile.
+* View Events - Join Events.
+* View Courses.
+* View Course Pages - Access Articles, Download Course Materials, Post Questions etc.
+* View Library - Check books online, Add a reservation.
+* Download a full report (which contains full details about exam marks, attendance etc).
+
+
+Academic Employee (Teachers)
+----------------------------
+* View Profile.
+* View Events - Join Events.
+* View Courses.
+* View Course Pages - Add Articles, Add Course Materials, Answer Students Questions etc.
+* View Library - Check books online, Add a reservation.
+* Download a full salary report.
+
+
+Non-Academic Employee
+---------------------
+* Full functionality except Salary calculation and Employee attendance.
