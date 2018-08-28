@@ -1,0 +1,49 @@
+// Override the semantic ui styles
+a,
+.button,
+label,
+input {
+  font-size: 1.3rem !important;
+}
+
+// Change the heading font
+h1,
+h2,
+h3,
+h5,
+h6 {
+  font-family: var(--heading-font) !important;
+}
+
+// This font is used in tables to highlight the most important values
+h4 {
+  font-family: var(--default-font) !important;
+  font-size: 1.3rem !important;
+}
+
+// Text in forms
+.field p {
+  color: rgb(104, 104, 104);
+  font-size: 1.2rem;
+  margin-top: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+
+// Text in comments
+.comment .text {
+  font-size: 1.4rem !important;
+}
+
+// Text inside segments
+.segment {
+  font-size: 1.3rem !important;
+}
+.ui.label {
+  font-size: 1.3rem !important;
+}
+optgroup {
+  font-size: 1.4rem !important;
+}
+textarea {
+  font-size: 1.3rem !important;
+}

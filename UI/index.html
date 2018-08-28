@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Institute Assistant &mdash; ITP</title>
+  <!-- icon library -->
+  <link rel="stylesheet" href="libs/font-awesome/all.css">
+  <!-- semantic ui -->
+  <link rel="stylesheet" href="libs/semantic/semantic.css">
+  <!-- semantic icons -->
+  <link rel="stylesheet" href="libs/semantic/icon.css">
+  <!-- local font -->
+  <link rel="stylesheet" href="fonts/stylesheet.css">
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- login modal -->
+  <div class="ui mini modal">
+    <div class="header">
+      <h2>Login to System</h2>
+    </div>
+    <div class="content">
+      <div class="ui segment">
+        <form class="ui form" id="login-form">
+          <div class="field">
+            <label>User Id</label>
+            <input name="userid" placeholder="User Id" type="text">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input name="password" placeholder="Password" type="password">
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input tabindex="0" class="hidden" type="checkbox">
+              <label>I agree to the Terms and Conditions</label>
+            </div>
+          </div>
+          <button class="ui button teal fluid" type="submit">Login</button>
+          <div class="ui horizontal divider">
+            Or
+          </div>
+          <button class="ui button blue fluid" type="button">Request an Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- main navigation bar -->
+  <nav class="navbar">
+    <div class="ui container">
+      <div class="navbar__content">
+        <div class="navbar__brand">
+          <h1>Brand</h1>
+        </div>
+        <ul class="navbar__list">
+          <li class="navbar__nav">
+            <a href="#" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__nav">
+            <a href="#" class="navbar__link">About</a>
+          </li>
+          <li class="navbar__nav">
+            <a href="#" class="navbar__link">Contact</a>
+          </li>
+        </ul>
+        <a href="#" class="navbar__login login-button">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main header -->
+  <header class="head">
+    <div class="head__main">
+      <div class="head__content">
+        <h1 class="heading-secondary">This webpage is under construction</h1>
+        <h3 class="heading-tertiary mb-normal">We'll be here soon with the complete site</h3>
+        <a href="#" class="btn-special login-button">Sign In</a>
+      </div>
+    </div>
+    <div class="head__sub">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class='hero__sub__down'
+        fill="currentColor" width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z"
+        />
+      </svg>
+    </div>
+  </header>
+
+  <!-- site content -->
+  <main>
+  </main>
+
+  <!-- footer of the site -->
+  <footer class="footer">
+  </footer>
+
+  <!-- jquery (used by semantic) -->
+  <script src="libs/jquery/jquery-3.3.1.min.js"></script>
+  <!-- semantic ui js -->
+  <script src="libs/semantic/semantic.js"></script>
+  <!-- main javascript file -->
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>

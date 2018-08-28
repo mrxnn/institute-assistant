@@ -1,0 +1,66 @@
+// navigation bar for the static website
+.navbar {
+  // background-color: var(--background-dark);
+  // border-bottom: 2px solid rgba(#008cff, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  // all the content in the navbar
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  // branding area
+  &__brand {
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--foreground-light);
+  }
+
+  // navigation link list
+  &__list {
+    list-style: none;
+  }
+
+  // each list item
+  &__nav {
+    display: inline-block;
+    padding: 2rem 1rem;
+  }
+
+  // navigation anchors
+  &__link {
+    text-decoration: none;
+    color: #eee;
+    text-transform: uppercase;
+    font-size: 1.1rem !important;
+    letter-spacing: 2px;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.9rem;
+    transition: all 0.2s;
+
+    &:hover {
+      color: lighten($color-primary, 20);
+      // border-bottom-color: lighten($color-primary, 20);
+    }
+  }
+
+  // user login buttons
+  &__login {
+    padding: 0.7rem 1.3rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    background-color: var(--background-dark);
+    color: white;
+    border-radius: 2px;
+
+    &:hover {
+      color: white; // to override the semantic ui style
+      background-color: #333;
+    }
+  }
+}
