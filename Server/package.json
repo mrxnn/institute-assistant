@@ -1,0 +1,23 @@
+{
+  "name": "instituteassistant",
+  "version": "1.0.0",
+  "description": "Institute management system for Kings Academy of English",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayura-ramanayaka/ITP-Project-SLIIT-2018.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mayura-ramanayaka/ITP-Project-SLIIT-2018/issues"
+  },
+  "homepage": "https://github.com/mayura-ramanayaka/ITP-Project-SLIIT-2018#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0"
+  }
+}
