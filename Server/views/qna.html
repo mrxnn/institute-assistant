@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Institute Assistant &mdash; ITP</title>
+  <!-- icon library -->
+  <link rel="stylesheet" href="libs/font-awesome/all.css">
+  <!-- semantic ui -->
+  <link rel="stylesheet" href="libs/semantic/semantic.css">
+  <!-- semantic icons -->
+  <link rel="stylesheet" href="libs/semantic/icon.css">
+  <!-- local font -->
+  <link rel="stylesheet" href="fonts/stylesheet.css">
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- button to display the question form -->
+  <button class="circular-button">
+    <span>+</span>
+  </button>
+
+  <!-- question form modal -->
+  <div class="ui modal" id="question-form-modal">
+    <div class="header">
+      <h2>Post a question</h2>
+    </div>
+    <div class="content">
+      <div class="ui segment">
+        <form class="ui form" id="question-form">
+          <div class="field">
+            <label for="title">Title</label>
+            <input name="title" placeholder="Title" type="text">
+          </div>
+          <div class="field">
+            <label for="question">Question</label>
+            <textarea name="question" cols="30" rows="10"></textarea>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input tabindex="0" class="hidden" type="checkbox">
+              <label>I agree to the Terms and Conditions</label>
+            </div>
+          </div>
+          <button class="ui button teal fluid" type="submit">Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- modal ends -->
+
+  <!-- main sidebar of the dashboard -->
+  <div class="divider-main">
+    <div class="side"></div>
+    <ul class="sidebar">
+      <li class="sidebar__item">
+        <a href="manage.html" class="sidebar__link">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="students.html" class="sidebar__link">
+          <i class="fas fa-graduation-cap"></i>
+          Student
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="employees.html" class="sidebar__link">
+          <i class="fas fa-user"></i>
+          Staff
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="courses.html" class="sidebar__link">
+          <i class="fas fa-book"></i>
+          Courses
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="events.html" class="sidebar__link">
+          <i class="fas fa-beer"></i>
+          Events
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="library.html" class="sidebar__link">
+          <i class="fas fa-book-open"></i>
+          Library
+        </a>
+      </li>
+      <li class="sidebar__item active">
+        <a href="qna.html" class="sidebar__link">
+          <i class="fas fa-tag"></i>
+          Q&A
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="finance.html" class="sidebar__link">
+          <i class="fas fa-money-bill-alt"></i>
+          Finance
+        </a>
+      </li>
+    </ul>
+    <!-- sidebar end -->
+    <!-- page content start -->
+    <div class="body-content">
+      <div class="title-bar mb-normal">
+        <div class="title-bar__title">brand</div>
+        <i class="fas fa-search"></i>
+        <a class="ui image label" href="index.html">
+          <img src="img/avatars/avatar1.png"> Mayura
+        </a>
+      </div>
+      <!-- container start -->
+      <div class="wrapper">
+        <!-- breadcrumb start -->
+        <div class="ui big breadcrumb">
+          <a class="section">Home</a>
+          <i class="right chevron icon divider"></i>
+          <div class="active section">Q&A</div>
+        </div>
+        <!-- breadcrumb end -->
+        <h3 class="heading-tertiary">The platform for Students and Teachers</h3>
+        <!-- main grid start -->
+        <div class="ui grid" style="margin-top: 2rem !important;">
+          <!-- question column -->
+          <div class="ten wide column">
+            <!-- question 1 start -->
+            <div class="ui card fluid">
+              <div class="content">
+                <div class="right floated meta">14h</div>
+                <img class="ui avatar image" src="img/avatars/avatar7.png">
+                <span>Jon Snow</span>
+              </div>
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit consequatur accusamus provident dolorum
+                  iure corporis, minima inventore itaque ab.</p>
+              </div>
+              <div class="content">
+                <span class="right floated">
+                  <i class="comment icon"></i> 1 answers
+                </span>
+                <img class="ui avatar image" src="img/avatars/avatar4.png"> Mr Bean commented
+              </div>
+              <div class="content">
+                <div class="ui accordion">
+                  <div class="title">
+                    <button class="ui button" id="comment-button">Add Answer</button>
+                  </div>
+                  <div class="content">
+                    <div class="ui comments">
+                      <h3 class="ui dividing header">Answers</h3>
+                      <div class="comment">
+                        <a class="avatar">
+                          <img src="img/avatars/avatar4.png">
+                        </a>
+                        <div class="content">
+                          <a class="author">Mr Bean</a>
+                          <div class="metadata">
+                            <span class="date">5 days ago</span>
+                          </div>
+                          <div class="text">
+                            All men must die!
+                          </div>
+                          <div class="actions">
+                            <a class="reply">Reply</a>
+                          </div>
+                        </div>
+                      </div>
+                      <form class="ui reply form">
+                        <div class="field">
+                          <textarea name="answer" cols="30" rows="10" placeholder="Your Answer..."></textarea>
+                        </div>
+                        <button type="submit" class="ui blue labeled submit icon button">
+                          <i class="icon edit"></i> Publish
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- question 1 end -->
+          </div>
+          <!-- question column end -->
+          <!-- recent list column -->
+          <div class="six wide column">
+            <div class="ui fluid card">
+              <div class="content">
+                <h3>Recent Activity</h3>
+                <div class="ui very relaxed list">
+                  <div class="item">
+                    <img class="ui avatar image" src="img/avatars/avatar7.png">
+                    <div class="content">
+                      <a class="header">Dean Winchester</a>
+                      <div class="description">Last seen today at
+                        <a>
+                          <b>18:34</b>
+                        </a> just now.</div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img class="ui avatar image" src="img/avatars/avatar2.png">
+                    <div class="content">
+                      <a class="header">Stannis Baratheon</a>
+                      <div class="description">Last seen on
+                        <a>
+                          <b>Jon Snow's post</b>
+                        </a> today.</div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img class="ui avatar image" src="img/avatars/avatar3.png">
+                    <div class="content">
+                      <a class="header">Arya Stark</a>
+                      <div class="description">Last seen on
+                        <a>
+                          <b>Jon Snow's post</b>
+                        </a> yesterday.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- recent list column end -->
+        </div>
+        <!-- main grid end -->
+      </div>
+      <!-- container end -->
+    </div>
+    <!-- page content end -->
+  </div>
+
+  <!-- jquery (used by semantic) -->
+  <script src="libs/jquery/jquery-3.3.1.min.js"></script>
+  <!-- semantic ui js -->
+  <script src="libs/semantic/semantic.js"></script>
+  <script>
+    document.querySelector("#comment-button").addEventListener("click", e => {
+      $(".ui.accordion").accordion();
+    });
+    document
+      .querySelector(".circular-button")
+      .addEventListener("click", () => {
+        $("#question-form-modal").modal("show");
+      });
+  </script>
+
+</body>
+
+</html>

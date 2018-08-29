@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Institute Assistant &mdash; ITP</title>
+  <!-- icon library -->
+  <link rel="stylesheet" href="libs/font-awesome/all.css">
+  <!-- semantic ui -->
+  <link rel="stylesheet" href="libs/semantic/semantic.css">
+  <!-- semantic icons -->
+  <link rel="stylesheet" href="libs/semantic/icon.css">
+  <!-- local font -->
+  <link rel="stylesheet" href="fonts/stylesheet.css">
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- button to display the question form -->
+  <button class="circular-button">
+    <span>+</span>
+  </button>
+
+  <!-- main sidebar of the dashboard -->
+  <div class="divider-main">
+    <div class="side"></div>
+    <ul class="sidebar">
+      <li class="sidebar__item">
+        <a href="manage.html" class="sidebar__link">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="students.html" class="sidebar__link">
+          <i class="fas fa-graduation-cap"></i>
+          Student
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="employees.html" class="sidebar__link">
+          <i class="fas fa-user"></i>
+          Staff
+        </a>
+      </li>
+      <li class="sidebar__item active">
+        <a href="courses.html" class="sidebar__link">
+          <i class="fas fa-book"></i>
+          Courses
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="events.html" class="sidebar__link">
+          <i class="fas fa-beer"></i>
+          Events
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="library.html" class="sidebar__link">
+          <i class="fas fa-book-open"></i>
+          Library
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="qna.html" class="sidebar__link">
+          <i class="fas fa-tag"></i>
+          Q&A
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="finance.html" class="sidebar__link">
+          <i class="fas fa-money-bill-alt"></i>
+          Finance
+        </a>
+      </li>
+    </ul>
+    <!-- sidebar end -->
+    <!-- page content start -->
+    <div class="body-content">
+      <div class="title-bar mb-normal">
+        <div class="title-bar__title">brand</div>
+        <i class="fas fa-search"></i>
+        <a class="ui image label" href="index.html">
+          <img src="img/avatars/avatar1.png"> Mayura
+        </a>
+      </div>
+      <!-- container start -->
+      <div class="wrapper">
+        <!-- breadcrumb start -->
+        <div class="ui big breadcrumb mb-normal">
+          <a class="section">Home</a>
+          <i class="right chevron icon divider"></i>
+          <a class="section">Courses</a>
+          <i class="right chevron icon divider"></i>
+          <div class="active section">Profile</div>
+        </div>
+        <!-- breadcrumb end -->
+        <div class="ui grid">
+          <div class="thirteen wide column">
+            <div class="profile">
+              <h1 class="heading-secondary">
+                Grammery
+              </h1>
+              <div class="ui segments">
+                <div class="ui segment">
+                  <strong>Title: </strong> Grammery
+                </div>
+                <div class="ui segment">
+                  <strong>Comment: </strong> Lorem ipsum dolor sit amet.
+                </div>
+                <div class="ui segment">
+                  <strong>Teacher: </strong> Jon Snow
+                </div>
+                <div class="ui segment">
+                  <strong>Duration: </strong> Six Months
+                </div>
+                <div class="ui segment">
+                  <strong>Started: </strong> 2018-03-26T15:30:027
+                </div>
+                <div class="ui segment">
+                  <strong>Students #: </strong> 98 Students
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="three wide column">
+            <div class="vertical-container">
+              <a href="#" class="card-button">Edit</a>
+              <a href="#" class="card-button">Q&A</a>
+              <a href="#" class="card-button">Attendance</a>
+              <a href="#" class="card-button">+Material</a>
+              <!-- <div class="ui button primary">Edit</div>
+              <div class="ui button green">Q&A</div>
+              <div class="ui button teal">Attendance</div>
+              <div class="ui button pink mt-normal">Material</div> -->
+            </div>
+          </div>
+        </div>
+        <!-- articles -->
+        <div class="mt-large">
+          <h3 class="heading-tertiary">Course Materials</h3>
+          <div class="ui message">
+            <div class="header">Empty</div>
+            <p>This course does not have any article, material or related questions in the Q&A feed yet.</p>
+          </div>
+        </div>
+        <!-- articles end -->
+        <!-- student list start -->
+        <h3 class="heading-tertiary mt-large">Students</h3>
+        <table class="ui table mb-large">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Attendance</th>
+              <th>Payment Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <h4 class="ui image header">
+                  <img src="img/avatars/avatar2.png" class="ui mini rounded image">
+                  <div class="content">
+                    John Doe
+                    <div class="sub header">S001
+                    </div>
+                  </div>
+                </h4>
+              </td>
+              <td>Good</td>
+              <td>Paid</td>
+              <td class="right aligned">
+                <a href="student-profile.html" class="ui button">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h4 class="ui image header">
+                  <img src="img/avatars/avatar4.png" class="ui mini rounded image">
+                  <div class="content">
+                    Sara Smith
+                    <div class="sub header">S002
+                    </div>
+                  </div>
+                </h4>
+              </td>
+              <td>Fair Enough</td>
+              <td>Paid</td>
+              <td class="right aligned">
+                <a href="student-profile.html" class="ui button">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h4 class="ui image header">
+                  <img src="img/avatars/avatar3.png" class="ui mini rounded image">
+                  <div class="content">
+                    Will Johnson
+                    <div class="sub header">S003
+                    </div>
+                  </div>
+                </h4>
+              </td>
+              <td>Attention Required</td>
+              <td>Pending</td>
+              <td class="right aligned">
+                <a href="student-profile.html" class="ui button">Edit</a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="5">
+                <div class="ui right floated pagination menu">
+                  <a class="icon item">
+                    <i class="left chevron icon"></i>
+                  </a>
+                  <a class="item active">1</a>
+                  <a class="item">2</a>
+                  <a class="item">3</a>
+                  <a class="item">4</a>
+                  <a class="icon item">
+                    <i class="right chevron icon"></i>
+                  </a>
+                </div>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+        <!-- student list end -->
+      </div>
+      <!-- container end -->
+    </div>
+    <!-- page content end -->
+  </div>
+
+  <!-- semantic ui js -->
+  <script src="libs/semantic/semantic.js"></script>
+
+</body>
+
+</html>
