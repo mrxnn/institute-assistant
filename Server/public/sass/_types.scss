@@ -1,0 +1,14 @@
+.heading {
+  &-primary {
+    font-size: 5rem;
+    color: #333;
+    letter-spacing: -2px;
+  }
+  &-secondary {
+    font-size: 3rem;
+  }
+  &-tertiary {
+    font-size: 2rem;
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,117 @@
+// content wrapper that push all the content into the middle
+.wrapper {
+  width: var(--container-width);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+// Special button for the header of the static website
+.btn-special {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  display: inline-block;
+  background-color: var(--background-dark);
+  color: var(--foreground-light);
+  border-radius: 2px;
+  min-width: 12rem;
+
+  &:hover {
+    color: var(--foreground-light);
+    background-color: #444;
+  }
+}
+
+// card button style
+.card-button {
+  background-color: lighten($color-primary, 10);
+  color: white;
+  border-radius: 2px;
+  margin-bottom: 4rem !important;
+  display: inline-block;
+  font-family: var(--default-font);
+  font-weight: bold;
+  font-size: 1.7rem !important;
+  box-shadow: 0 1rem 1rem rgba($color-primary, 0.2);
+  width: 14rem;
+
+  // padding: 4rem 0;
+  // text-align: center;
+  text-align: right;
+  padding: 6rem 2rem 2rem 3.5rem;
+
+  &:hover {
+    color: white;
+    background-color: $color-primary;
+  }
+}
+
+// circular button for the qna feed
+.circular-button {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  background-color: var(--color-primary);
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 3rem !important;
+  font-weight: bold;
+  transition: all 0.2s;
+  border: 0;
+
+  &:hover {
+    color: white;
+    background-color: rgb(28, 214, 84);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+  }
+}
+
+// user profile
+.user-profile {
+  margin-bottom: 4rem;
+  &__tags {
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__picture {
+    margin-right: 2rem;
+  }
+}
+
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+
+  & > .card-button {
+    margin: 0 !important;
+    padding: 3.2rem 0;
+    text-align: center;
+    margin-bottom: 0.98px !important;
+    width: 100%;
+
+    &:not(:last-child) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

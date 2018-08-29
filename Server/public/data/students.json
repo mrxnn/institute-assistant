@@ -1,0 +1,20 @@
+[
+  {
+    "id": "S001",
+    "name": "John Doe",
+    "phone": "111-222-3333",
+    "img_url": "img/avatars/avatar2.png"
+  },
+  {
+    "id": "S002",
+    "name": "Sara Smith",
+    "phone": "444-555-6666",
+    "img_url": "img/avatars/avatar8.png"
+  },
+  {
+    "id": "S003",
+    "name": "Will Johnson",
+    "phone": "666-888-4444",
+    "img_url": "img/avatars/avatar7.png"
+  }
+]

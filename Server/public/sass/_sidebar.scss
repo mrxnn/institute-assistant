@@ -1,0 +1,65 @@
+.side {
+  width: calc(var(--sidebar-size) + 1rem);
+  height: 100vh;
+}
+
+// main sidebar component
+.sidebar {
+  background-color: var(--background-dark);
+  height: 100vh;
+  position: fixed;
+  list-style: none;
+  color: var(--foreground-light);
+
+  // each sidebar item
+  &__item {
+    background-color: var(--background-dark);
+    height: var(--sidebar-size);
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: calc(var(--sidebar-size) + 1rem);
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    // highlight the active item
+    &.active {
+      color: lighten($color-primary, 8);
+      font-weight: 600;
+    }
+
+    // mouse hover animation
+    &:hover {
+      background-color: darken(#292d33, 4);
+    }
+  }
+
+  // each individual link
+  &__link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.1rem !important;
+    letter-spacing: 1.2px;
+    color: inherit;
+
+    // add margin to each element in the item
+    & > * {
+      margin-bottom: calc(var(--sidebar-size) / 10);
+    }
+
+    // set the icon size
+    .fas {
+      font-size: 2.2rem;
+    }
+
+    &:hover {
+      color: currentColor;
+    }
+  }
+}

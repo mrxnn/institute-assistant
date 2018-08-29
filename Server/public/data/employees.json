@@ -1,0 +1,20 @@
+[
+  {
+    "id": "E001",
+    "name": "Jon Snow",
+    "phone": "333-222-1111",
+    "img_url": "img/avatars/avatar8.png"
+  },
+  {
+    "id": "E002",
+    "name": "Stannis Baratheon",
+    "phone": "222-111-9999",
+    "img_url": "img/avatars/avatar7.png"
+  },
+  {
+    "id": "E003",
+    "name": "Arya Stark",
+    "phone": "777-888-2222",
+    "img_url": "img/avatars/avatar2.png"
+  }
+]

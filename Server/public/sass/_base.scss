@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: var(--default-unit) !important;
+}
+
+body {
+  font-family: var(--normal-font) !important;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  // background-image: linear-gradient(rgba(#fff, 0.9), rgba(#fff, 0.9)),
+  //   url("../img/banner.jpg");
+  // background-size: cover;
+}
