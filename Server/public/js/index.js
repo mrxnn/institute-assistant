@@ -7,6 +7,6 @@ document.querySelectorAll(".login-button").forEach(btn => {
 
 // navigate to the dashboard when logged in
 document.querySelector("#login-form").addEventListener("submit", e => {
-  window.location.href = "manage.html";
+  window.location.href = "manage";
   e.preventDefault();
 });

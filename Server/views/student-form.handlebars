@@ -1,0 +1,53 @@
+<!-- breadcrumb start -->
+<div class="ui big breadcrumb">
+  <a class="section">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section">Students</a>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">Add Student</div>
+</div>
+<!-- breadcrumb end -->
+<h1 class="heading-secondary" id="ttt">Add Student</h1>
+<p class="mb-normal">
+  Westworld ipsum dolor sit amet consectetur, adipisicing elit. Repellat numquam quod, ut debitis quidem vel, dolorem dolorum
+  praesentium soluta vitae delectus, facere eligendi quae? Assumenda.
+</p>
+<!--form start -->
+<form class="ui form" action="/students/create" method="POST">
+  <div class="field required">
+    <label>First Name</label>
+    <input name="firstName" autofocus required type="text">
+    <p>This will be your display name. You can add the name of your organization later.</p>
+  </div>
+  <div class="field required">
+    <label>Last Name</label>
+    <input name="lastName" required type="text">
+  </div>
+  <div class="field required">
+    <label>Gender</label>
+    <input name="gender" required type="text">
+  </div>
+  <div class="field required">
+    <label>Phone</label>
+    <input name="phone" required type="text">
+    <p>We’ll occasionally send updates about your account to this inbox. We’ll never share your phone number with anyone.
+    </p>
+  </div>
+  <div class="field required">
+    <label>Address</label>
+    <input name="address" required type="text">
+  </div>
+  <div class="field required">
+    <label>Date of Birth</label>
+    <input name="dateofbirth" required type="date">
+  </div>
+  <br>
+  <div class="field required">
+    <div class="ui checkbox">
+      <input tabindex="0" class="hidden" type="checkbox">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button mb-large" type="submit">Submit Student</button>
+</form>
+<!--form end -->
