@@ -2,6 +2,9 @@
 const express = require("express");
 const router = express.Router();
 
+// Student model
+const Student = require("../models/Student");
+
 // Bring in the database connection
 const connection = require("../relational/database");
 
@@ -23,22 +26,30 @@ router.get("/create", (req, res) => {
 // Students form
 router.post("/create", (req, res) => {
   // Init the student
-  let student = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    gender: req.body.gender,
-    address: req.body.address,
-    dateOfBirth: req.body.dateofbirth,
-    password: "12345",
-    phone: req.body.phone
-  };
+  const student = new Student(
+    req.body.firstName,
+    req.body.lastName,
+    req.body.gender,
+    req.body.phone,
+    req.body.dateofbirth,
+    req.body.address,
+    "12345" // default value -- todo --> should generate a password
+  );
 
-  // Run the query
-  connection.query("INSERT INTO Students SET ?", student, (error, results) => {
-    if (error) throw error;
-    console.log(results.insertId);
-    res.send("Student Added");
-  });
+  // Validate the properties
+  if (student.validate()) {
+    connection.query(
+      "INSERT INTO Students SET ?",
+      student,
+      (error, results) => {
+        if (error) throw error;
+        console.log(results.insertId);
+        res.redirect("/students");
+      }
+    );
+  } else {
+    // Log the error
+  }
 });
 
 // export the router module
