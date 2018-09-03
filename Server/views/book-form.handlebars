@@ -1,0 +1,50 @@
+<!-- breadcrumb start -->
+<div class="ui big breadcrumb">
+  <a class="section">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section">Library</a>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">Add Books</div>
+</div>
+<!-- breadcrumb end -->
+<h1 class="heading-secondary" id="ttt">Add Book</h1>
+<p class="mb-normal">
+  Westworld ipsum dolor sit amet consectetur, adipisicing elit. Repellat numquam quod, ut debitis quidem vel, dolorem dolorum
+  praesentium soluta vitae delectus, facere eligendi quae? Assumenda.
+</p>
+<!-- form start -->
+<form class="ui form" action="/library/addbook" method="POST">
+  <div class="field">
+    <label>ISBN</label>
+    <input name="isbn" autofocus required type="text">
+    <p>Ignore this field if the ISBN number cannot be identified.</p>
+  </div>
+  <div class="field required">
+    <label>Title</label>
+    <input name="title" required type="text">
+    <p>Please enter the exact book title printed on the physical copy of the book, which may prevent many inconvenients later.
+    </p>
+  </div>
+  <div class="field required">
+    <label>Comment</label>
+    <input name="description" required type="text">
+  </div>
+  <div class="field required">
+    <label>Author</label>
+    <input name="author" required type="text">
+    <p>If the author already exists in the system, please select that one instead of adding a new author.</p>
+  </div>
+  <div class="field required">
+    <label>Published By</label>
+    <input name="publisher" required type="text">
+  </div>
+  <div class="field required">
+    <div class="ui checkbox">
+      <input tabindex="0" class="hidden" type="checkbox">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <br>
+  <button class="ui button" type="submit">Submit</button>
+</form>
+<!-- form end -->

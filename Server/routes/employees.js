@@ -2,88 +2,92 @@
 const express = require("express");
 const router = express.Router();
 
-// Student model
-const Student = require("../models/Student");
+// Employee model
+const Employee = require("../models/Employee");
 
 // Bring in the database connection
 const connection = require("../relational/database");
 
-// Students page
+// Employee page
 router.get("/", (req, res) => {
-  connection.query("SELECT * FROM Students", (err, results) => {
+  connection.query("SELECT * FROM Employees", (err, results) => {
     if (err) throw err;
-    res.render("students", {
-      students: results
+    res.render("employees", {
+      employees: results
     });
   });
 });
 
-// Students form
+// Employee form
 router.get("/new", (req, res) => {
-  res.render("student-form", {
+  res.render("employee-form", {
     actionOnSubmit: "create"
   });
 });
 
-// Students form
+// Employee form
 router.post("/create", (req, res) => {
-  // Init the student
-  const student = new Student(
+  // Init the employee
+  const employee = new Employee(
     req.body.firstName,
     req.body.lastName,
     req.body.gender,
     req.body.phone,
     req.body.dateofbirth,
     req.body.address,
-    "1234567890",
-    "12345" // default value -- todo --> should generate a password
+    "12345", // default value -- todo --> should generate a password
+    "Non-Academic",
+    req.body.nic,
+    req.body.post
   );
 
+  console.log(employee);
+
   // Validate the model
-  const validationErrors = student.validate().error;
+  const validationErrors = employee.validate().error;
 
   if (validationErrors) {
-    res.render("student-form", {
+    res.render("employee-form", {
       error: validationErrors.details[0].message
     });
   } else {
     connection.query(
-      "INSERT INTO Students SET ?",
-      student,
+      "INSERT INTO Employees SET ?",
+      employee,
       (error, results) => {
         if (error) throw error;
         console.log(results.insertId);
-        res.redirect("/students");
+        res.redirect("/employees");
       }
     );
   }
 });
 
-// Single student profile
+// Single employee profile
 router.get("/:id", (req, res) => {
   connection.query(
-    "SELECT * FROM Students WHERE Id = ?",
+    "SELECT * FROM Employees WHERE Id = ?",
     req.params.id,
     (err, result) => {
       if (err) throw err;
       console.log(result);
-      res.render("student-profile", {
-        student: result[0]
+      res.render("employee-profile", {
+        employee: result[0]
       });
     }
   );
 });
 
-// Edit student form
+// Edit employee form
 router.get("/edit/:id", (req, res) => {
   connection.query(
-    "SELECT * FROM Students WHERE Id = ?",
+    "SELECT * FROM Employees WHERE Id = ?",
     req.params.id,
     (err, result) => {
       if (err) throw err;
       console.log(result);
-      res.render("student-form", {
-        student: result[0],
+      res.render("employee-form", {
+        employee: result[0],
         actionOnSubmit: "update/" + req.params.id
       });
     }
@@ -92,43 +96,47 @@ router.get("/edit/:id", (req, res) => {
 
 // Update student
 router.post("/update/:id", (req, res) => {
-  // Init the student
-  const student = new Student(
+  // Init the employee
+  const employee = new Employee(
     req.body.firstName,
     req.body.lastName,
     req.body.gender,
     req.body.phone,
     req.body.dateofbirth,
     req.body.address,
-    "1234567890",
-    "12345" // default value -- todo --> should generate a password
+    "12345", // default value -- todo --> should generate a password
+    "Non-Academic",
+    req.body.nic,
+    req.body.post
   );
 
-  console.log(student);
+  console.log(employee);
 
   // Validate the model
-  const validationErrors = student.validate().error;
+  const validationErrors = employee.validate().error;
 
   if (validationErrors) {
-    res.render("student-form", {
+    res.render("employee-form", {
       error: validationErrors.details[0].message
     });
   } else {
     connection.query(
-      "UPDATE Students SET FirstName=?, LastName=?, Gender=?, Phone=?, DateOfBirth=?, Address=? WHERE Id=?",
+      "UPDATE Employees SET FirstName=?, LastName=?, Gender=?, Phone=?, DateOfBirth=?, Address=?, Nic=?, Post=? WHERE Id=?",
       [
-        student.firstName,
-        student.lastName,
-        student.gender,
-        student.phone,
-        student.dateOfBirth,
-        student.address,
+        employee.firstName,
+        employee.lastName,
+        employee.gender,
+        employee.phone,
+        employee.dateOfBirth,
+        employee.address,
+        employee.nic,
+        employee.post,
         req.params.id
       ],
       (error, results) => {
         if (error) throw error;
         console.log(results.insertId);
-        res.redirect("/students");
+        res.redirect("/employees");
       }
     );
   }

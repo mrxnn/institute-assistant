@@ -2,7 +2,7 @@
   --default-unit: 62.5%;
   --background-dark: #292d33;
   --foreground-light: #eeeeee;
-  --color-primary: $color-primary;
+  --color-primary: #008cff;
   --normal-font: "Nunito";
   --heading-font: "Circular Std Book";
   --container-width: 85%;
@@ -82,7 +82,7 @@ textarea {
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
@@ -92,7 +92,7 @@ html {
 body {
   font-family: var(--normal-font) !important;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -143,7 +143,7 @@ body {
   font-weight: bold;
   font-size: 1.7rem !important;
   -webkit-box-shadow: 0 1rem 1rem rgba(0, 140, 255, 0.2);
-          box-shadow: 0 1rem 1rem rgba(0, 140, 255, 0.2);
+  box-shadow: 0 1rem 1rem rgba(0, 140, 255, 0.2);
   width: 14rem;
   text-align: right;
   padding: 6rem 2rem 2rem 3.5rem;
@@ -166,11 +166,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: 50%;
   font-size: 3rem !important;
   font-weight: bold;
@@ -183,16 +183,16 @@ body {
   color: white;
   background-color: #1cd654;
   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .circular-button:active {
   -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .user-profile {
@@ -219,8 +219,8 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .vertical-container > .card-button {
@@ -253,8 +253,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .navbar__brand {
@@ -324,15 +324,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   min-width: calc(var(--sidebar-size) + 1rem);
   cursor: pointer;
   -webkit-transition: background-color 0.2s;
@@ -355,14 +355,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-transform: uppercase;
   font-size: 1.1rem !important;
   letter-spacing: 1.2px;
@@ -386,8 +386,20 @@ body {
 }
 
 .head__main {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(108, 99, 255, 0.8)), to(rgba(70, 65, 255, 0.87))), url("../img/banner.jpg");
-  background-image: linear-gradient(to right, rgba(108, 99, 255, 0.8), rgba(70, 65, 255, 0.87)), url("../img/banner.jpg");
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(108, 99, 255, 0.8)),
+      to(rgba(70, 65, 255, 0.87))
+    ),
+    url("../img/banner.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(108, 99, 255, 0.8),
+      rgba(70, 65, 255, 0.87)
+    ),
+    url("../img/banner.jpg");
   background-size: cover;
   background-position: bottom;
   height: calc(100vh - 5rem);
@@ -395,15 +407,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   color: var(--foreground-light);
   -webkit-box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
 }
 
 .head__sub {
@@ -412,11 +424,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .head__sub svg {
@@ -443,8 +455,8 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .title-bar {
@@ -452,13 +464,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
   padding-left: 2.5rem;
   background-color: #f4f9fd;
   -webkit-box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
 }
 
 .title-bar__title {

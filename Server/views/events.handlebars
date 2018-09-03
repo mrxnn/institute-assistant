@@ -2,17 +2,17 @@
 <div class="ui big breadcrumb">
   <a class="section">Home</a>
   <i class="right chevron icon divider"></i>
-  <div class="active section">Students</div>
+  <div class="active section">Events</div>
 </div>
 <!-- breadcrumb end -->
 <!-- action buttons -->
 <span>
   <br>
   <br>
-  <a href="students/new" class="card-button">Add Entry</a>
-  <a href="student-form.html" class="card-button">Reporting</a>
-  <a href="attendance.html" class="card-button">Attendance</a>
-  <a href="student-form.html" class="card-button">Illustrates</a>
+  <a href="events/new" class="card-button">Add Entry</a>
+  <a href="event-form.html" class="card-button">Reporting</a>
+  <a href="event-form.html" class="card-button">Findings!</a>
+  <a href="event-form.html" class="card-button">Illustrates</a>
   <div style="display: flex;">
     <h3 class="heading-tertiary" style="margin-right: 1rem; margin-top: .5rem;">All</h3>
     <div class="ui search">
@@ -29,31 +29,31 @@
 <table class="ui table">
   <thead>
     <tr>
-      <th>Student</th>
-      <th>Phone</th>
-      <th>Birthday</th>
-      <th>Gender</th>
+      <th>Event</th>
+      <th>DateTime</th>
+      <th>Description</th>
+      <th>Location</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    {{#each students}}
+    {{#each events}}
     <tr>
       <td>
         <h4 class="ui image header">
           <img src="img/avatars/avatar2.png" class="ui mini rounded image">
           <div class="content">
-            {{this.FirstName}} {{this.LastName}}
-            <div class="sub header">00{{this.Id}}
+            {{this.Title}}
+            <div class="sub header">E00{{this.Id}}
             </div>
           </div>
         </h4>
       </td>
-      <td>{{this.Phone}}</td>
-      <td>{{this.DateOfBirth}}</td>
-      <td>{{this.Gender}}</td>
+      <td>{{this.Date}}</td>
+      <td>{{this.Description}}</td>
+      <td>{{this.Location}}</td>
       <td class="right aligned">
-        <a href="/students/{{this.Id}}" class="ui button">View</a>
+        <a href="/events/{{this.Id}}" class="ui button">View</a>
       </td>
     </tr>
     {{/each}}
@@ -80,28 +80,11 @@
 <!-- table end -->
 <!-- today start -->
 <div style="margin: 4rem 0;">
-  <h3 class="heading-tertiary">Recent Activity</h3>
-  <h5 class="ui top attached header green">
-    Today
-  </h5>
-  <div class="ui attached segment">
-    <a class="ui image label">
-      <img src="img/avatars/avatar6.png"> Jon Snow
-    </a>
-    <div class="ui message">
-      3 New students are successfully added 2h ago
-    </div>
-    <div class="ui message">
-      4 Students are successfully removed 5h ago
-    </div>
-  </div>
-  <h5 class="ui attached header blue">
-    This Week
-  </h5>
-  <div class="ui attached segment">
-    <div class="ui message">
-      No activities are recorded this week
-    </div>
+  <h3 class="heading-tertiary">Upcoming Events</h3>
+  <div class="ui message">
+    <div class="header">Tomarrow</div>
+    <p>An event is scheduled to be held on tomarrow</p>
+    <a href="#" class="ui secondary button">View</a>
   </div>
 </div>
 <!-- today end -->

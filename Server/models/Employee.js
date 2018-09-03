@@ -1,13 +1,27 @@
 const Joi = require("joi");
 const User = require("./User");
 
-// Student constructor
-function Student(firstName, lastName, gender, phone, dob, address, password) {
+// Employee constructor
+function Employee(
+  firstName,
+  lastName,
+  gender,
+  phone,
+  dob,
+  address,
+  password,
+  role,
+  nic,
+  post
+) {
   User.call(this, firstName, lastName, gender, phone, dob, address, password);
+  this.empRole = role;
+  this.post = post;
+  this.nic = nic;
 }
 
-// Validate the students properties
-Student.prototype.validate = function() {
+// Validate the Employees properties
+Employee.prototype.validate = function() {
   // Schema to validate
   const schema = {
     firstName: Joi.string()
@@ -27,12 +41,20 @@ Student.prototype.validate = function() {
     address: Joi.string()
       .max(256)
       .required(),
-    password: Joi.string().optional()
+    password: Joi.string().optional(),
+    empRole: Joi.string()
+      .only("Academic", "Non-Academic")
+      .required(),
+    post: Joi.string().required(),
+    nic: Joi.string()
+      .required()
+      .min(10)
+      .max(10)
   };
 
   const result = Joi.validate(this, schema);
   return result;
 };
 
-// Export the student
-module.exports = Student;
+// Export the Employee
+module.exports = Employee;

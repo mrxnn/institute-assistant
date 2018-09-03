@@ -13,33 +13,33 @@
   praesentium soluta vitae delectus, facere eligendi quae? Assumenda.
 </p>
 <!--form start -->
-<form class="ui form" action="/students/create" method="POST">
+<form class="ui form" action="/students/{{actionOnSubmit}}" method="POST">
   <div class="field required">
     <label>First Name</label>
-    <input name="firstName" autofocus required type="text">
+    <input name="firstName" autofocus required type="text" value="{{student.FirstName}}">
     <p>This will be your display name. You can add the name of your organization later.</p>
   </div>
   <div class="field required">
     <label>Last Name</label>
-    <input name="lastName" required type="text">
+    <input name="lastName" required type="text" value="{{student.LastName}}">
   </div>
   <div class="field required">
     <label>Gender</label>
-    <input name="gender" required type="text">
+    <input name="gender" required type="text" value="{{student.Gender}}">
   </div>
   <div class="field required">
     <label>Phone</label>
-    <input name="phone" required type="text">
+    <input name="phone" required type="text" value="{{student.Phone}}">
     <p>We’ll occasionally send updates about your account to this inbox. We’ll never share your phone number with anyone.
     </p>
   </div>
   <div class="field required">
     <label>Address</label>
-    <input name="address" required type="text">
+    <input name="address" required type="text" value="{{student.Address}}">
   </div>
   <div class="field required">
     <label>Date of Birth</label>
-    <input name="dateofbirth" required type="date">
+    <input name="dateofbirth" required type="date" value="{{student.DateOfBirth}}">
   </div>
   <br>
   <div class="field required">

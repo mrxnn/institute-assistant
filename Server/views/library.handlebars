@@ -2,17 +2,17 @@
 <div class="ui big breadcrumb">
   <a class="section">Home</a>
   <i class="right chevron icon divider"></i>
-  <div class="active section">Students</div>
+  <div class="active section">Library</div>
 </div>
 <!-- breadcrumb end -->
 <!-- action buttons -->
 <span>
   <br>
   <br>
-  <a href="students/new" class="card-button">Add Entry</a>
-  <a href="student-form.html" class="card-button">Reporting</a>
-  <a href="attendance.html" class="card-button">Attendance</a>
-  <a href="student-form.html" class="card-button">Illustrates</a>
+  <a href="/library/addbook" class="card-button">Add Book</a>
+  <a href="book-form.html" class="card-button">Reporting</a>
+  <a href="book-form.html" class="card-button">Book issue</a>
+  <a href="book-form.html" class="card-button">Violations</a>
   <div style="display: flex;">
     <h3 class="heading-tertiary" style="margin-right: 1rem; margin-top: .5rem;">All</h3>
     <div class="ui search">
@@ -29,31 +29,31 @@
 <table class="ui table">
   <thead>
     <tr>
-      <th>Student</th>
-      <th>Phone</th>
-      <th>Birthday</th>
-      <th>Gender</th>
+      <th>Book</th>
+      <th>Author</th>
+      <th>Published By</th>
+      <th>Status</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    {{#each students}}
+    {{#each books}}
     <tr>
       <td>
         <h4 class="ui image header">
-          <img src="img/avatars/avatar2.png" class="ui mini rounded image">
+          <img src="img/books/book-cover.jpg" class="ui mini rounded image">
           <div class="content">
-            {{this.FirstName}} {{this.LastName}}
+            {{this.Title}}
             <div class="sub header">00{{this.Id}}
             </div>
           </div>
         </h4>
       </td>
-      <td>{{this.Phone}}</td>
-      <td>{{this.DateOfBirth}}</td>
-      <td>{{this.Gender}}</td>
+      <td>{{this.Author}}</td>
+      <td>{{this.Publisher}}</td>
+      <td>{{this.Status}}</td>
       <td class="right aligned">
-        <a href="/students/{{this.Id}}" class="ui button">View</a>
+        <a href="#" class="ui button">Issue</a>
       </td>
     </tr>
     {{/each}}
@@ -78,30 +78,10 @@
   </tfoot>
 </table>
 <!-- table end -->
-<!-- today start -->
-<div style="margin: 4rem 0;">
-  <h3 class="heading-tertiary">Recent Activity</h3>
-  <h5 class="ui top attached header green">
-    Today
-  </h5>
-  <div class="ui attached segment">
-    <a class="ui image label">
-      <img src="img/avatars/avatar6.png"> Jon Snow
-    </a>
-    <div class="ui message">
-      3 New students are successfully added 2h ago
-    </div>
-    <div class="ui message">
-      4 Students are successfully removed 5h ago
-    </div>
-  </div>
-  <h5 class="ui attached header blue">
-    This Week
-  </h5>
-  <div class="ui attached segment">
-    <div class="ui message">
-      No activities are recorded this week
-    </div>
-  </div>
+<!-- notification section -->
+<h3 class="heading-tertiary">Notifications</h3>
+<div class="ui message error mb-large">
+  <p>2 books have not been returned on time</p>
+  <a href="#" class="ui button red">View details</a>
 </div>
-<!-- today end -->
+<!-- notification section end -->

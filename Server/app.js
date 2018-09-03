@@ -27,5 +27,21 @@ app.get("/manage", (req, res) => {
 let students = require("./routes/students");
 app.use("/students", students);
 
+// Reroute all the requests to /employees
+let employees = require("./routes/employees");
+app.use("/employees", employees);
+
+// Reroute all the requests to /events
+let events = require("./routes/events");
+app.use("/events", events);
+
+// Reroute all the requests to /qna
+let qna = require("./routes/qna");
+app.use("/qna", qna);
+
+// Reroute all the requests to /library
+let library = require("./routes/library");
+app.use("/library", library);
+
 // Start the server on given port
-app.listen(3000, () => console.log("Server started on port 3000"));
+app.listen(3000, () => console.log("Server started on http://localhost:3000"));

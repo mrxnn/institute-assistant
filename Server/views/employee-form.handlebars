@@ -1,0 +1,72 @@
+<!-- breadcrumb start -->
+<div class="ui big breadcrumb">
+  <a class="section">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section">Employees</a>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">Add Employee</div>
+</div>
+<!-- breadcrumb end -->
+<h1 class="heading-secondary" id="ttt">Add Employee</h1>
+<p class="mb-normal">
+  Westworld ipsum dolor sit amet consectetur, adipisicing elit. Repellat numquam quod, ut debitis quidem vel, dolorem dolorum
+  praesentium soluta vitae delectus, facere eligendi quae? Assumenda.
+</p>
+<!-- form start -->
+<form class="ui form" action="/employees/{{actionOnSubmit}}" method="POST">
+  <div class="field required">
+    <label for="">Name</label>
+    <div class="two fields">
+      <div class="field">
+        <input name="firstName" autofocus required type="text" placeholder="First Name" value="{{employee.FirstName}}">
+      </div>
+      <div class="field">
+        <input name="lastName" required type="text" placeholder="Last Name" value="{{employee.LastName}}">
+      </div>
+    </div>
+  </div>
+  <div class="field required">
+    <label>Gender</label>
+    <input name="gender" required type="text" value="{{employee.Gender}}">
+  </div>
+  <div class="field required">
+    <label>Date of Birth</label>
+    <input name="dateofbirth" required type="date" value="{{employee.DateOfBirth}}">
+  </div>
+  <div class="field required">
+    <label>NIC</label>
+    <input name="nic" required type="text" value="{{employee.Nic}}">
+  </div>
+  <div class="field required">
+    <label>Address</label>
+    <input name="address" required type="text" value="{{employee.Address}}">
+  </div>
+  <div class="field required">
+    <label>Post</label>
+    <input name="post" required type="text" value="{{employee.Post}}">
+  </div>
+  <div class="field required">
+    <label for="">Contact Information</label>
+    <div class="three fields">
+      <div class="field">
+        <input name="phone" required type="text" placeholder="Phone" value="{{employee.Phone}}">
+      </div>
+      <div class="field">
+        <input name="email" required type="text" placeholder="Email" value="{{employee.Email}}">
+      </div>
+      <div class="field">
+        <input name="secondary-email" type="text" placeholder="Secondary email" value="{{employee.SecondaryEmail}}">
+      </div>
+    </div>
+    <p>We’ll occasionally send updates about your account to this inbox. We’ll never share your email address with anyone.
+    </p>
+  </div>
+  <div class="field required">
+    <div class="ui checkbox">
+      <input tabindex="0" class="hidden" type="checkbox">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button primary mb-large" type="submit">Submit</button>
+</form>
+<!-- form end -->

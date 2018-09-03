@@ -2,17 +2,17 @@
 <div class="ui big breadcrumb">
   <a class="section">Home</a>
   <i class="right chevron icon divider"></i>
-  <div class="active section">Students</div>
+  <div class="active section">Employees</div>
 </div>
 <!-- breadcrumb end -->
 <!-- action buttons -->
 <span>
   <br>
   <br>
-  <a href="students/new" class="card-button">Add Entry</a>
-  <a href="student-form.html" class="card-button">Reporting</a>
+  <a href="employees/new" class="card-button">Add Entry</a>
+  <a href="#" class="card-button">Reporting</a>
   <a href="attendance.html" class="card-button">Attendance</a>
-  <a href="student-form.html" class="card-button">Illustrates</a>
+  <a href="#" class="card-button">Leaves</a>
   <div style="display: flex;">
     <h3 class="heading-tertiary" style="margin-right: 1rem; margin-top: .5rem;">All</h3>
     <div class="ui search">
@@ -29,15 +29,15 @@
 <table class="ui table">
   <thead>
     <tr>
-      <th>Student</th>
+      <th>Employee</th>
       <th>Phone</th>
-      <th>Birthday</th>
+      <th>Post</th>
       <th>Gender</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    {{#each students}}
+    {{#each employees}}
     <tr>
       <td>
         <h4 class="ui image header">
@@ -50,10 +50,10 @@
         </h4>
       </td>
       <td>{{this.Phone}}</td>
-      <td>{{this.DateOfBirth}}</td>
+      <td>{{this.Post}}</td>
       <td>{{this.Gender}}</td>
       <td class="right aligned">
-        <a href="/students/{{this.Id}}" class="ui button">View</a>
+        <a href="/employees/{{this.Id}}" class="ui button">View</a>
       </td>
     </tr>
     {{/each}}
@@ -78,30 +78,33 @@
   </tfoot>
 </table>
 <!-- table end -->
-<!-- today start -->
 <div style="margin: 4rem 0;">
-  <h3 class="heading-tertiary">Recent Activity</h3>
+  <h3 class="heading-tertiary">Active Employees</h3>
   <h5 class="ui top attached header green">
-    Today
+    Active Now
   </h5>
   <div class="ui attached segment">
     <a class="ui image label">
-      <img src="img/avatars/avatar6.png"> Jon Snow
+      <img src="img/avatars/avatar6.png">
     </a>
-    <div class="ui message">
-      3 New students are successfully added 2h ago
-    </div>
-    <div class="ui message">
-      4 Students are successfully removed 5h ago
-    </div>
+    John Doe is active now
+    <a class="ui green empty circular label"></a>
   </div>
   <h5 class="ui attached header blue">
-    This Week
+    Active Today
   </h5>
   <div class="ui attached segment">
-    <div class="ui message">
-      No activities are recorded this week
-    </div>
+    <a class="ui image label">
+      <img src="img/avatars/avatar4.png">
+    </a>
+    Sara Smith was active 2h ago
+    <a class="ui grey empty circular label"></a>
+  </div>
+  <div class="ui attached segment">
+    <a class="ui image label">
+      <img src="img/avatars/avatar3.png">
+    </a>
+    Will Johnson was active 3h ago
+    <a class="ui grey empty circular label"></a>
   </div>
 </div>
-<!-- today end -->

@@ -43,3 +43,13 @@ Create table Employees
   Password varchar(256) not null,
   EmpRole int not null
 );
+
+/* Events */
+Create table Events
+(
+  Id int primary key auto_increment,
+  Title varchar(32) not null,
+  Description varchar(256) not null,
+  Date date not null,
+  Time varchar(32) not null
+);

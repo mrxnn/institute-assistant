@@ -1,0 +1,51 @@
+<!-- breadcrumb start -->
+<div class="ui big breadcrumb">
+  <a class="section">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section">Events</a>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">Add Event</div>
+</div>
+<!-- breadcrumb end -->
+<h1 class="heading-secondary" id="ttt">Add Event</h1>
+<p class="mb-normal">
+  Westworld ipsum dolor sit amet consectetur, adipisicing elit. Repellat numquam quod, ut debitis quidem vel, dolorem dolorum
+  praesentium soluta vitae delectus, facere eligendi quae? Assumenda.
+</p>
+<!-- form start -->
+<form class="ui form" action="/events/{{actionOnSubmit}}" method="POST">
+  <div class="field required">
+    <label>Title</label>
+    <input name="title" autofocus required type="text" value="{{event.Title}}">
+    <p>This will be your username. You can add the name of your organization later.</p>
+  </div>
+  <div class="field required">
+    <label>Description</label>
+    <textarea name="description" cols="30" rows="3" maxlength="255">{{event.Description}}</textarea>
+    <p>
+      A short description about the event. Please note that do not enter more than 250 charactors in here. It will couse inconvenient
+      problems when rendering the event.
+    </p>
+  </div>
+  <div class="field required">
+    <label>Date</label>
+    <input name="date" required type="date" value="{{event.Date}}">
+  </div>
+  <div class="field required">
+    <label>Time</label>
+    <input name="time" required type="text" value="{{event.Time}}">
+    <p>Use a valid time</p>
+  </div>
+  <div class="field required">
+    <label>Location</label>
+    <input name="location" required type="text" value="{{event.Location}}">
+  </div>
+  <div class="field required">
+    <div class="ui checkbox">
+      <input tabindex="0" class="hidden" type="checkbox">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button mb-large" type="submit">Add Event</button>
+</form>
+<!-- form end -->

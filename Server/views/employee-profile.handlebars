@@ -1,0 +1,63 @@
+<!-- breadcrumb start -->
+<div class="ui big breadcrumb ">
+  <a class="section">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section">Employees</a>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">Profile</div>
+</div>
+<!-- breadcrumb end -->
+<h2 class="heading-tertiary">Employee Profile</h2>
+<!-- profile start -->
+<div class="user-profile">
+  <div class="user-profile__tags">
+    <div class="ui label blue">Receptionist</div>
+    <div class="ui label green">Online</div>
+  </div>
+  <div class="user-profile__content">
+    <div class="user-profile__picture">
+      <div class="ui card">
+        <a class="image" href="#">
+          <img src="img/avatars/avatar8.png">
+        </a>
+      </div>
+    </div>
+    <div class="user-profile__info fluid">
+      <div class="ui segments">
+        <div class="ui segment fluid">
+          <strong>Username: </strong> {{employee.FirstName}} {{employee.LastName}}
+        </div>
+        <div class="ui segment">
+          <strong>Location: </strong> {{employee.Address}}
+        </div>
+        <div class="ui segment">
+          <strong>Phone: </strong> {{employee.Phone}}
+        </div>
+        <div class="ui segment">
+          <strong>Post: </strong> {{employee.Post}}
+        </div>
+        <div class="ui segment">
+          <strong>NIC: </strong> {{employee.Nic}}
+        </div>
+        <div class="ui segment">
+          <strong>Birthday: </strong> {{employee.DateOfBirth}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- profile end -->
+<!-- actions start -->
+<h3 class="heading-tertiary">Common Actions</h3>
+<div>
+  <a href="/employees/edit/{{employee.Id}}" class="card-button">Edit</a>
+  <a href="#" class="card-button">Reporting</a>
+  <a href="#" class="card-button">Salary</a>
+</div>
+<!-- actions end -->
+<div style="margin-bottom: 4rem">
+  <h3 class="heading-tertiary">Recent Activity</h3>
+  <div class="ui message">
+    Added 5 students 2h ago.
+  </div>
+</div>
