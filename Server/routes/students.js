@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 });
 
 // Students form
-router.get("/create", (req, res) => {
+router.get("/new", (req, res) => {
   res.render("student-form");
 });
 
@@ -36,8 +36,14 @@ router.post("/create", (req, res) => {
     "12345" // default value -- todo --> should generate a password
   );
 
-  // Validate the properties
-  if (student.validate()) {
+  // Validate the model
+  const validationErrors = student.validate().error;
+
+  if (validationErrors) {
+    res.render("student-form", {
+      error: validationErrors.details[0].message
+    });
+  } else {
     connection.query(
       "INSERT INTO Students SET ?",
       student,
@@ -47,9 +53,22 @@ router.post("/create", (req, res) => {
         res.redirect("/students");
       }
     );
-  } else {
-    // Log the error
   }
+});
+
+// Single student profile
+router.get("/:id", (req, res) => {
+  connection.query(
+    "SELECT * FROM Students WHERE Id = ?",
+    req.params.id,
+    (err, result) => {
+      if (err) throw err;
+      console.log(result);
+      res.render("student-profile", {
+        student: result[0]
+      });
+    }
+  );
 });
 
 // export the router module

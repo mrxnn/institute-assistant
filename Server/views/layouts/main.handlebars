@@ -85,7 +85,9 @@
       </div>
       <!-- container start -->
       <div class="wrapper">
-        {{{body}}}
+        {{#if error}}
+        <div class="ui message">{{error}}</div>
+        {{/if}} {{{body}}}
       </div>
       <!-- container end -->
     </div>

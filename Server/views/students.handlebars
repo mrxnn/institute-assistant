@@ -9,7 +9,7 @@
 <span>
   <br>
   <br>
-  <a href="/students/create" class="card-button">Add Entry</a>
+  <a href="students/new" class="card-button">Add Entry</a>
   <a href="student-form.html" class="card-button">Reporting</a>
   <a href="attendance.html" class="card-button">Attendance</a>
   <a href="student-form.html" class="card-button">Illustrates</a>
@@ -53,7 +53,7 @@
       <td>{{this.DateOfBirth}}</td>
       <td>{{this.Gender}}</td>
       <td class="right aligned">
-        <a href="student-profile.html" class="ui button">View</a>
+        <a href="/students/{{this.Id}}" class="ui button">View</a>
       </td>
     </tr>
     {{/each}}
