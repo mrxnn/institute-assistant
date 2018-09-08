@@ -58,6 +58,15 @@ router.post('/add', (req, res) => {
     req.body.bio
   );
 
+  // Validate the student
+  const error = student.validate().error;
+  if (error !== null) {
+    req.flash('error', error.details[0].message);
+    res.redirect('/students/add');
+    return;
+  }
+
+  // Add the student
   db.query('INSERT INTO Students SET ?', student, (err, result) => {
     if (err) throw err;
     req.flash('success', 'Student is successfully added');
