@@ -12,10 +12,14 @@ block content
     br
     br
     div.mb-large
-      a.ui.button.blue(href='/employees/add') Add Entry
-      a.ui.button.purple(href='#') Reporting
-      a.ui.button.blue(href='attendance.html') Attendance
-      a.ui.button.green(href='#') Leaves
+      //- a.ui.button.blue(href='/employees/add') Add Entry
+      a.ui.animated.fade.blue.button(tabindex='0' href='/employees/add' style='padding:2rem;')
+        .visible.content New Entry
+        .hidden.content
+          | Add employee
+      a.ui.button.purple(href='#' style='padding:2rem;') Reporting
+      a.ui.button.blue(href='attendance.html' style='padding:2rem;') Attendance
+      a.ui.button.green(href='#' style='padding:2rem;') Leaves
     div(style='display: flex;')
       h3.heading-tertiary(style='margin-right: 1rem; margin-top: .5rem;') All
       .ui.search
