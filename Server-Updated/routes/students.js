@@ -60,6 +60,7 @@ router.post('/add', (req, res) => {
 
   db.query('INSERT INTO Students SET ?', student, (err, result) => {
     if (err) throw err;
+    req.flash('success', 'Student is successfully added');
     res.status(201).redirect('/students');
   });
 });
@@ -87,22 +88,23 @@ router.get('/edit/:id', (req, res) => {
  */
 router.post('/edit', (req, res) => {
   db.query('UPDATE Students SET firstName=?, lastName=?, gender=?, nic=?, dateOfBirth=?, phone=?, email=?, location=?, bio=? WHERE id=?',
-  [
-    req.body.firstName,
-    req.body.lastName,
-    req.body.gender,
-    req.body.nic,
-    req.body.dateOfBirth,
-    req.body.phone,
-    req.body.email,
-    req.body.location,
-    req.body.bio,
-    req.body.id
-  ], (err, results) => {
-    if (err)
-      throw err;
-    res.redirect('/students');
-  });
+    [
+      req.body.firstName,
+      req.body.lastName,
+      req.body.gender,
+      req.body.nic,
+      req.body.dateOfBirth,
+      req.body.phone,
+      req.body.email,
+      req.body.location,
+      req.body.bio,
+      req.body.id
+    ], (err, results) => {
+      if (err)
+        throw err;
+      req.flash('success', 'Student is successfully updated')
+      res.redirect('/students');
+    });
 });
 
 /**
@@ -115,6 +117,7 @@ router.delete('/delete/:id', (req, res) => {
     req.params.id,
     (err, results) => {
       if (err) throw err;
+      req.flash('success', 'Student is successfully removed');
       res.status(200).json({ message: 'Student deleted' });
     }
   );

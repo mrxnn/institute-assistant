@@ -53,6 +53,7 @@ head
         img(src='/img/avatars/avatar1.png')
         |  Mayura
     .wrapper
+      != messages('message', locals)
       block content
 script(src='/libs/semantic/semantic.js')
 script(src='/libs/chartjs/Chart.js')
