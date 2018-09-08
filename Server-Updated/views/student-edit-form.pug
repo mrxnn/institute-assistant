@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb
+    a.section Home
+    i.right.chevron.icon.divider
+    a.section Students
+    i.right.chevron.icon.divider
+    .active.section Edit Student
+  // breadcrumb end
+  h1#ttt.heading-secondary Edit Student
+  p.mb-normal
+    | You can add a new student to the system using this page. Please note that filling out all the fields marked with asterics is
+    | mandatory, and the ones without any symbol is optional to filling in.
+  div.carded
+    h3#ttt.heading-tertiary Basics
+    // form start
+    form.ui.form(action='/students/edit', method='POST')
+      .field
+        label Student Id
+        input(value=student.Id name='id' autofocus='' required='' type='text')
+      .field
+        label First Name
+        input(value=student.FirstName name='firstName' autofocus='' required='' type='text')
+      .field
+        label Last Name
+        input(value=student.LastName name='lastName' required='' type='text')
+      .field
+        label Gender
+        input(value=student.Gender name='gender' required='' type='text')
+      .field
+        label Phone
+        input(value=student.Phone name='phone' required='' type='text')
+      .field
+        label Address
+        textarea(name="address", cols="30", rows="1")= student.Address
+      .field
+        label Date of Birth
+        input(value=student.DateOfBirth name='dateOfBirth' required='' type='date')
+      br
+      .field.required
+        .ui.checkbox
+          input.hidden(tabindex='0' type='checkbox')
+          label I agree to the Terms and Conditions
+      button.ui.button.mb-large.blue(type='submit') Update Student
+  // form end

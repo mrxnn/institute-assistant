@@ -1,0 +1,33 @@
+// controls the primary color.
+// it was needed to define the sass version of this variable, just to
+// use some of the sass functions such as lighten(), darken() etc.
+$color-primary: #008cff;
+
+*:root {
+  // controls what a one rem is
+  --default-unit: 62.5%;
+
+  // controls the dark background color
+  --background-dark: #292d33;
+
+  // controls light foreground color
+  --foreground-light: #eeeeee;
+
+  // controls primary blue color
+  --color-primary: $color-primary;
+
+  // controls default font family
+  --normal-font: "Nunito";
+
+  // controls fonts for headings
+  --heading-font: "Circular Std Book";
+
+  // controls the width of the inner content
+  --container-width: 85%;
+
+  // controls max width of the inner content
+  --container-max-width: 96rem;
+
+  // controls the size of the sidebar
+  --sidebar-size: 10rem;
+}

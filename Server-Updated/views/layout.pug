@@ -1,0 +1,62 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Institute Assistant &mdash; ITP
+  link(rel='stylesheet' href='/libs/font-awesome/all.css')
+  link(rel='stylesheet' href='/libs/semantic/semantic.css')
+  link(rel='stylesheet' href='/libs/semantic/icon.css')
+  link(rel='stylesheet' href='/fonts/stylesheet.css')
+  link(rel='stylesheet' href='/css/main.css')
+.divider-main
+  .side
+  ul.sidebar
+    li.sidebar__item#home-button
+      a.sidebar__link(href='/dashboard')
+        i.fas.fa-home
+        | Home
+    li.sidebar__item#students-button
+      a.sidebar__link(href='/students')
+        i.fas.fa-graduation-cap
+        | Student
+    li.sidebar__item
+      a.sidebar__link(href='employees.html')
+        i.fas.fa-user
+        | Staff
+    li.sidebar__item
+      a.sidebar__link(href='courses.html')
+        i.fas.fa-book
+        | Courses
+    li.sidebar__item
+      a.sidebar__link(href='events.html')
+        i.fas.fa-beer
+        | Events
+    li.sidebar__item
+      a.sidebar__link(href='library.html')
+        i.fas.fa-book-open
+        | Library
+    li.sidebar__item
+      a.sidebar__link(href='qna.html')
+        i.fas.fa-tag
+        | Q&amp;A
+    li.sidebar__item
+      a.sidebar__link(href='finance.html')
+        i.fas.fa-money-bill-alt
+        | Finance
+  // page content start
+  .body-content
+    .title-bar.mb-normal
+      .title-bar__title brand
+      i.fas.fa-search
+      a.ui.image.label(href='/')
+        img(src='/img/avatars/avatar1.png')
+        |  Mayura
+    .wrapper
+      block content
+script(src='/libs/semantic/semantic.js')
+script(src='/libs/chartjs/Chart.js')
+script(src='/js/charting.js')
+script(src="/js/main.js")
+
+

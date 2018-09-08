@@ -1,0 +1,71 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Institute Assistant &mdash; ITP
+  // icon library
+  link(rel='stylesheet' href='libs/font-awesome/all.css')
+  // semantic ui
+  link(rel='stylesheet' href='libs/semantic/semantic.css')
+  // semantic icons
+  link(rel='stylesheet' href='libs/semantic/icon.css')
+  // local font
+  link(rel='stylesheet' href='fonts/stylesheet.css')
+  // main stylesheet
+  link(rel='stylesheet' href='css/main.css')
+// login modal
+.ui.mini.modal
+  .header
+    h2 Login to System
+  .content
+    .ui.segment
+      form#login-form.ui.form
+        .field
+          label User Id
+          input(name='userid' placeholder='User Id' type='text')
+        .field
+          label Password
+          input(name='password' placeholder='Password' type='password')
+        .field
+          .ui.checkbox
+            input.hidden(tabindex='0' type='checkbox')
+            label I agree to the Terms and Conditions
+        button.ui.button.teal.fluid(type='submit') Login
+        .ui.horizontal.divider
+          | Or
+        button.ui.button.blue.fluid(type='button') Request an Application
+// main navigation bar
+nav.navbar
+  .ui.container
+    .navbar__content
+      .navbar__brand
+        h1 Brand
+      ul.navbar__list
+        li.navbar__nav
+          a.navbar__link(href='#') Home
+        li.navbar__nav
+          a.navbar__link(href='#') About
+        li.navbar__nav
+          a.navbar__link(href='#') Contact
+      a.navbar__login.login-button(href='#') Sign In
+// main header
+header.head
+  .head__main
+    .head__content
+      h1.heading-secondary This webpage is under construction
+      h3.heading-tertiary.mb-normal We&apos;ll be here soon with the complete site
+      a.btn-special.login-button(href='#') Sign In
+  .head__sub
+    svg.hero__sub__down(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' fill='currentColor' width='512px' height='512px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve')
+      path(d='M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z')
+// site content
+main
+// footer of the site
+footer.footer
+// jquery (used by semantic)
+script(src='libs/jquery/jquery-3.3.1.min.js')
+// semantic ui js
+script(src='libs/semantic/semantic.js')
+// main javascript file
+script(src='js/index.js')

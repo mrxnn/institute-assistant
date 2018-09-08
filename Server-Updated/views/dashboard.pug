@@ -1,0 +1,93 @@
+extends layout
+
+block content
+  h1.heading-primary.mb-normal Statistics
+  // chart grid start
+  .ui.grid
+    // student chart start
+    .eight.wide.column
+      .ui.top.attached.segment
+        h3.heading-tertiary New students
+      .ui.attached.segment
+        canvas#student-chart
+      .ui.bottom.attached.segment(style='text-align: center;')
+        h1.heading-tertiary +30%
+        |       Students
+    // student chart end
+    // cost chart start
+    .eight.wide.column
+      .ui.top.attached.segment
+        h3.heading-tertiary Total cost
+      .ui.attached.segment
+        canvas#cost-chart
+      .ui.bottom.attached.segment(style='text-align: center;')
+        h1.heading-tertiary -50%
+        |       Total Cost
+    // cost chart end
+  // chart grid end
+  // system log start
+  div(style='margin: 4rem 0;')
+    h3.heading-tertiary System Log
+    // table start
+    table.ui.table
+      thead
+        tr
+          th Username
+          th Time
+          th Type
+          th Contact
+          th
+      tbody
+        tr
+          td
+            h4.ui.image.header
+              img.ui.mini.rounded.image(src='img/avatars/avatar2.png')
+              .content
+                | John Doe
+                .sub.header
+                  | S001
+          td Today 12:21
+          td Student
+          td 111-222-4444
+          td.right.aligned
+            a.ui.teal.button(href='student-profile.html') View
+        tr
+          td
+            h4.ui.image.header
+              img.ui.mini.rounded.image(src='img/avatars/avatar4.png')
+              .content
+                | Sara Smith
+                .sub.header
+                  | E001
+          td Today 12:16
+          td Employee
+          td 555-333-8888
+          td.right.aligned
+            a.ui.teal.button(href='student-profile.html') View
+        tr
+          td
+            h4.ui.image.header
+              img.ui.mini.rounded.image(src='img/avatars/avatar3.png')
+              .content
+                | Will Johnson
+                .sub.header
+                  | S003
+          td Today 11:58
+          td Student
+          td 444-666-9999
+          td.right.aligned
+            a.ui.teal.button(href='student-profile.html') View
+      tfoot
+        tr
+          th(colspan='5')
+            .ui.right.floated.pagination.menu
+              a.icon.item
+                i.left.chevron.icon
+              a.item.active 1
+              a.item 2
+              a.item 3
+              a.item 4
+              a.icon.item
+                i.right.chevron.icon
+    // table end
+  // system log end

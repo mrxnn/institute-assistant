@@ -1,0 +1,17 @@
+{
+  "name": "student-assistant",
+  "version": "1.0.0",
+  "description": "Student management system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Mayura Ramanayaka",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "pug": "^2.0.3"
+  }
+}
