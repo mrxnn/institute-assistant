@@ -14,34 +14,40 @@ block content
     | You can add a new student to the system using this page. Please note that filling out all the fields marked with asterics is
     | mandatory, and the ones without any symbol is optional to filling in.
   div.carded
-    h3#ttt.heading-tertiary Basics
     // form start
     form.ui.form(action='/students/edit', method='POST')
-      .field
+      label.ui.label.green.tag.mb-normal Basic Information
+      .field.hidden
         label Student Id
-        input(value=student.Id name='id' autofocus='' required='' type='text')
-      .field
-        label First Name
-        input(value=student.FirstName name='firstName' autofocus='' required='' type='text')
-      .field
-        label Last Name
-        input(value=student.LastName name='lastName' required='' type='text')
-      .field
-        label Gender
-        input(value=student.Gender name='gender' required='' type='text')
-      .field
-        label Phone
-        input(value=student.Phone name='phone' required='' type='text')
-      .field
-        label Address
-        textarea(name="address", cols="30", rows="1")= student.Address
-      .field
-        label Date of Birth
-        input(value=student.DateOfBirth name='dateOfBirth' required='' type='date')
-      br
+        input(value=student.id name='id' autofocus='' required='' type='text')
       .field.required
-        .ui.checkbox
-          input.hidden(tabindex='0' type='checkbox')
-          label I agree to the Terms and Conditions
+        label First Name
+        input(value=student.firstName name='firstName' autofocus='' required='' type='text')
+      .field.required
+        label Last Name
+        input(value=student.lastName name='lastName' required='' type='text')
+      .field.required
+        label Gender
+        input(value=student.gender name='gender' required='' type='text')
+      .field.required
+        label NIC
+        input(value=student.nic name='nic' required='' type='text')
+      .field.required
+        label Date of Birth
+        input(value=student.dateOfBirth name='dateOfBirth' required='' type='date')
+
+      label.ui.label.yellow.tag.mb-normal.mt-large Contact Information
+      .field.required
+        label Phone
+        input(value=student.phone name='phone' required='' type='text')
+      .field
+        label Email
+        input(value=student.email name='email' required='' type='text')
+      .field.required
+        label Location
+        textarea(name="location", cols="30", rows="1")= student.location
+      .field
+        label Bio
+        textarea(name="bio", cols="30", rows="1")= student.bio
       button.ui.button.mb-large.blue(type='submit') Update Student
   // form end

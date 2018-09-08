@@ -1,0 +1,7 @@
+GET 	/students
+GET 	/students/1
+GET 	/students/add
+POST 	/students/add
+GET 	/students/edit/1
+POST	/students/edit
+DELETE	/students/delete/1

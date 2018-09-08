@@ -23,34 +23,33 @@ block content
           a.image(href='#')
             img(src='/img/avatars/avatar6.png')
       .user-profile__info
-        .ui.segments
+        .ui.segments.fluid
           .ui.segment
             strong Student Id: 
-            |  #{student.Id}
+            |  #{student.id}
           .ui.segment
             strong Username: 
-            |  #{student.FirstName} #{student.LastName}
+            |  #{student.firstName} #{student.lastName}
           .ui.segment
             strong Location: 
-            |  #{student.Address}
+            |  #{student.location}
           .ui.segment
             strong Phone: 
-            |  #{student.Phone}
+            |  #{student.phone}
           .ui.segment
             strong Birthday: 
-            |  #{new Date(student.DateOfBirth).toDateString()}
+            |  #{new Date(student.dateOfBirth).toDateString()}
           .ui.segment
             strong Bio: 
-            |  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur a debitis voluptate molestiae
-            |           iste explicabo neque aspernatur et sunt dicta?
+            |  #{student.bio}
   // profile end
   // actions start
   h3.heading-tertiary Common Actions
   div
-    a.card-button(href='/students/edit/' + student.Id) Edit
-    a.card-button.delete-student-button(href='#' data-id=student.Id) Delete
-    a.card-button(href='#') Reporting
+    a.ui.button.teal(href='/students/edit/' + student.id) Edit Student
+    a.ui.button.red.delete-student-button(href='#' data-id=student.id) Remove Student
+    a.ui.button(href='#') Reporting
   // actions end
-  h3.heading-tertiary Recent Examinations
+  h3.heading-tertiary.mt-large Recent Examinations
   .ui.message.mb-normal
     | This student hasn&apos;t sat for any examination since joining the academy.

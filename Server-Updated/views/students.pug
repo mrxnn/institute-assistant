@@ -11,7 +11,7 @@ block content
   span
     br
     br
-    a.ui.button.blue(href='/students/new') Add Entry
+    a.ui.button.blue(href='/students/add') Add Entry
     a.ui.button.purple(href='student-form.html') Reporting
     a.ui.button.blue(href='attendance.html') Attendance
     a.ui.button.green(href='student-form.html') Illustrates
@@ -32,8 +32,9 @@ block content
       tr
         th Student
         th Phone
-        th Gender
-        th Address
+        th Email
+        th NIC
+        th Location
         th
     tbody
       each student in students
@@ -42,17 +43,19 @@ block content
             h4.ui.image.header
               img.ui.mini.rounded.image(src='img/avatars/avatar2.png')
               .content
-                | #{student.FirstName} #{student.LastName}
+                | #{student.firstName} #{student.lastName}
                 .sub.header
-                  | #{student.Id}
-          td #{student.Phone}
-          td #{student.Gender}
-          td #{student.Address}
+                  | #{student.id}
+          td #{student.phone}
+          td 
+            a(href='mailto:'+student.email) Compose
+          td #{student.nic}
+          td #{student.location}
           td.right.aligned
-            a.ui.button(href='/students/'+ student.Id) View
+            a.ui.button(href='/students/'+ student.id) View
     tfoot
       tr
-        th(colspan='5')
+        th(colspan='6')
           .ui.right.floated.pagination.menu
             a.icon.item
               i.left.chevron.icon

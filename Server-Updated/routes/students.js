@@ -17,9 +17,9 @@ router.get('/', (req, res) => {
 
 /**
  * GET
- * http://localhost:3000/students/new
+ * http://localhost:3000/students/add
  */
-router.get('/new', (req, res) => {
+router.get('/add', (req, res) => {
   res.render('student-add-form');
 });
 
@@ -42,22 +42,25 @@ router.get('/:id', (req, res) => {
 
 /**
  * POST
- * http://localhost:3000/students
+ * http://localhost:3000/students/add
  */
-router.post('/', (req, res) => {
+router.post('/add', (req, res) => {
   // Init the student
   let student = new Student(
     req.body.firstName,
     req.body.lastName,
     req.body.gender,
+    req.body.nic,
+    req.body.dateOfBirth,
     req.body.phone,
-    req.body.address,
-    req.body.dateOfBirth
+    req.body.email,
+    req.body.location,
+    req.body.bio
   );
 
   db.query('INSERT INTO Students SET ?', student, (err, result) => {
     if (err) throw err;
-    res.redirect('/students');
+    res.status(201).redirect('/students');
   });
 });
 
@@ -83,35 +86,36 @@ router.get('/edit/:id', (req, res) => {
  * http://localhost:3000/students/edit
  */
 router.post('/edit', (req, res) => {
-  db.query(
-    'UPDATE Students SET FirstName=?, LastName=?, Gender=?, Phone=?, Address=?, DateOfBirth=? WHERE Id=?',
-    [
-      req.body.firstName,
-      req.body.lastName,
-      req.body.gender,
-      req.body.phone,
-      req.body.address,
-      req.body.dateOfBirth,
-      req.body.id
-    ],
-    (err, results) => {
-      if (err) throw err;
-      res.redirect('/students');
-    }
-  );
+  db.query('UPDATE Students SET firstName=?, lastName=?, gender=?, nic=?, dateOfBirth=?, phone=?, email=?, location=?, bio=? WHERE id=?',
+  [
+    req.body.firstName,
+    req.body.lastName,
+    req.body.gender,
+    req.body.nic,
+    req.body.dateOfBirth,
+    req.body.phone,
+    req.body.email,
+    req.body.location,
+    req.body.bio,
+    req.body.id
+  ], (err, results) => {
+    if (err)
+      throw err;
+    res.redirect('/students');
+  });
 });
 
 /**
  * DELETE
- * http://localhost:3000/students/1
+ * http://localhost:3000/students/delete/1
  */
-router.delete('/:id', (req, res) => {
+router.delete('/delete/:id', (req, res) => {
   db.query(
     'DELETE FROM Students WHERE Id = ?',
     req.params.id,
     (err, results) => {
       if (err) throw err;
-      res.json({ message: 'Student deleted' });
+      res.status(200).json({ message: 'Student deleted' });
     }
   );
 });

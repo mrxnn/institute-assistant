@@ -14,9 +14,9 @@ block content
     | You can add a new student to the system using this page. Please note that filling out all the fields marked with asterics is
     | mandatory, and the ones without any symbol is optional to filling in.
   div.carded
-    h3#ttt.heading-tertiary Basics
     // form start
-    form.ui.form(action='/students', method='POST')
+    form.ui.form(action='/students/add', method='POST')
+      label.ui.label.green.tag.mb-normal Basic Information
       .field.required
         label First Name
         input(name='firstName' autofocus='' required='' type='text')
@@ -27,18 +27,24 @@ block content
         label Gender
         input(name='gender' required='' type='text')
       .field.required
-        label Phone
-        input(name='phone' required='' type='text')
-      .field.required
-        label Address
-        textarea(name="address", cols="30", rows="1")
+        label NIC
+        input(name='nic' required='' type='text')
       .field.required
         label Date of Birth
         input(name='dateOfBirth' required='' type='date')
-      br
+
+      label.ui.label.yellow.tag.mb-normal.mt-large Contact Information
       .field.required
-        .ui.checkbox
-          input.hidden(tabindex='0' type='checkbox')
-          label I agree to the Terms and Conditions
+        label Phone
+        input(name='phone' required='' type='text')
+      .field
+        label Email
+        input(name='email' required='' type='text')
+      .field.required
+        label Location
+        textarea(name="location", cols="30", rows="1")
+      .field
+        label Bio
+        textarea(name="bio", cols="30", rows="1")
       button.ui.button.mb-large.blue(type='submit') Save Student
   // form end

@@ -1,12 +1,15 @@
 // Student model
 class Student {
-  constructor(firstName, lastName, gender, phone, address, dateOfBirth) {
+  constructor(firstName, lastName, gender, nic, dateOfBirth, phone, email, location, bio) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.gender = gender;
-    this.phone = phone;
-    this.address = address;
+    this.nic = nic;
     this.dateOfBirth = dateOfBirth;
+    this.phone = phone;
+    this.email = email;
+    this.location = location;
+    this.bio = bio;
   }
 }
 
