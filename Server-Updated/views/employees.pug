@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb
+    a.section Home
+    i.right.chevron.icon.divider
+    .active.section Employees
+  // breadcrumb end
+  // action buttons
+  span
+    br
+    br
+    div.mb-large
+      a.ui.button.blue(href='/employees/add') Add Entry
+      a.ui.button.purple(href='#') Reporting
+      a.ui.button.blue(href='attendance.html') Attendance
+      a.ui.button.green(href='#') Leaves
+    div(style='display: flex;')
+      h3.heading-tertiary(style='margin-right: 1rem; margin-top: .5rem;') All
+      .ui.search
+        .ui.icon.input
+          input.prompt(placeholder='Find students...' type='text')
+          i.search.icon
+        .results
+  // action buttons end
+  // table start
+  table.ui.table
+    thead
+      tr
+        th Employee
+        th Phone
+        th Email
+        th Post
+        th
+    tbody
+      for employee in employees
+        tr
+        td
+          h4.ui.image.header
+            img.ui.mini.rounded.image(src='img/avatars/avatar2.png')
+            .content
+              | #{employee.firstName} #{employee.lastName}
+              .sub.header
+                | #{employee.id}
+        td #{employee.phone}
+        td #{employee.email}
+        td #{employee.post}
+        td.right.aligned
+          a.ui.button(href='/employees/'+employee.id) View
+    tfoot
+      tr
+        th(colspan='5')
+          .ui.right.floated.pagination.menu
+            a.icon.item
+              i.left.chevron.icon
+            a.item.active 1
+            a.item 2
+            a.item 3
+            a.item 4
+            a.icon.item
+              i.right.chevron.icon
+  // table end
+  div(style='margin: 4rem 0;')
+    h3.heading-tertiary Active Employees
+    h5.ui.top.attached.header.green
+      | Active Now
+    .ui.attached.segment
+      a.ui.image.label
+        img(src='img/avatars/avatar6.png')
+      |     John Doe is active now
+      a.ui.green.empty.circular.label
+    h5.ui.attached.header.blue
+      | Active Today
+    .ui.attached.segment
+      a.ui.image.label
+        img(src='img/avatars/avatar4.png')
+      |     Sara Smith was active 2h ago
+      a.ui.grey.empty.circular.label
+    .ui.attached.segment
+      a.ui.image.label
+        img(src='img/avatars/avatar3.png')
+      |     Will Johnson was active 3h ago
+      a.ui.grey.empty.circular.label

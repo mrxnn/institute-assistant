@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb
+    a.section Home
+    i.right.chevron.icon.divider
+    a.section Employees
+    i.right.chevron.icon.divider
+    .active.section Profile
+  // breadcrumb end
+  h2.heading-tertiary Employee Profile
+  // profile start
+  .user-profile
+    .user-profile__tags
+      .ui.label.blue Receptionist
+      .ui.label.green Online
+    .user-profile__content
+      .user-profile__picture
+        .ui.card
+          a.image(href='#')
+            img(src='img/avatars/avatar8.png')
+      .user-profile__info
+        .ui.segments
+          .ui.segment
+            strong Username: 
+            |  Arya Stark
+          .ui.segment
+            strong Location: 
+            |  Bravos
+          .ui.segment
+            strong Phone: 
+            |  333-444-5555
+          .ui.segment
+            strong Member Since: 
+            |  2016-09-26T15:30:027
+          .ui.segment
+            strong Bio: 
+            |  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur a debitis voluptate molestiae
+            |           iste explicabo neque aspernatur et sunt dicta?
+  // profile end
+  // actions start
+  h3.heading-tertiary Common Actions
+  div
+    a.card-button(href='employee-form.html') Edit
+    a.card-button(href='#') Reporting
+    a.card-button(href='#') Salary
+  // actions end
+  div(style='margin-bottom: 4rem')
+    h3.heading-tertiary Recent Activity
+    .ui.message
+      | Added 5 students 2h ago.

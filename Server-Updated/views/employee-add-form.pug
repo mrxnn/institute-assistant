@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb
+    a.section Home
+    i.right.chevron.icon.divider
+    a.section Employee
+    i.right.chevron.icon.divider
+    .active.section Add Employee
+  // breadcrumb end
+  h1.heading-secondary Add Employee
+  p.mb-normal
+    | You can add a new employee to the system using this page. Please note that filling out all the fields marked with asterics is
+    | mandatory, and the ones without any symbol is optional to filling in.
+  div.carded
+    // form start
+    form.ui.form(action='/employees/add', method='POST')
+
+      label.ui.label.green.tag.mb-normal Basic Information
+      .field.required
+        label First Name
+        input(name='firstName' autofocus='' required='' type='text')
+      .field.required
+        label Last Name
+        input(name='lastName' required='' type='text')
+      .field.required
+        label Gender
+        input(name='gender' required='' type='text')
+      .field.required
+        label NIC
+        input(name='nic' required='' type='text')
+      .field.required
+        label Date of Birth
+        input(name='dateOfBirth' required='' type='date')
+
+      label.ui.label.blue.tag.mb-normal.mt-large Contact Information
+      .field.required
+        label Phone
+        input(name='phone' required='' type='text')
+      .field
+        label Email
+        input(name='email' required='' type='text')
+      .field.required
+        label Location
+        textarea(name="location", cols="30", rows="1")
+      .field
+        label Bio
+        textarea(name="bio", cols="30", rows="1")
+
+      label.ui.label.red.tag.mb-normal.mt-large Internal Information
+      .field.required
+        label Employee Type
+        input(name='type' required='' type='text')
+      .field.required
+        label Working Post
+        input(name='post' required='' type='text')
+
+      button.ui.button.mb-large.blue(type='submit') Save Employee
+  // form end

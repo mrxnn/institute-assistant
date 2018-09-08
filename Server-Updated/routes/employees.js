@@ -1,120 +1,81 @@
 const express = require('express');
 const router = express.Router();
+const Employee = require('../models/Employee');
 const db = require('../relational/database');
-const Student = require('../models/Student');
 
 /**
  * GET
- * http://localhost:3000/students
+ * http://localhost:3000/employees
  */
 router.get('/', (req, res) => {
-  db.query('SELECT * FROM Students', (err, results) => {
-    res.render('students', {
-      students: results
-    });
+  db.query('SELECT * FROM Employees', (err, results) => {
+    if (err) throw err;
+    res.render('employees', {
+      employees: results
+    })
   });
 });
 
 /**
  * GET
- * http://localhost:3000/students/add
+ * http://localhost:3000/employees/add
  */
 router.get('/add', (req, res) => {
-  res.render('student-add-form');
-});
-
-/**
- * GET
- * http://localhost:3000/students/1
- */
-router.get('/:id', (req, res) => {
-  db.query(
-    'SELECT * FROM Students WHERE Id = ?',
-    req.params.id,
-    (err, results) => {
-      if (err) throw err;
-      res.render('student-profile', {
-        student: results[0]
-      });
-    }
-  );
+  res.render('employee-add-form');
 });
 
 /**
  * POST
- * http://localhost:3000/students/add
+ * http://localhost:3000/employees/add
  */
 router.post('/add', (req, res) => {
-  // Init the student
-  let student = new Student(
+  // init the employee object
+  const employee = new Employee(
     req.body.firstName,
     req.body.lastName,
     req.body.gender,
+    req.body.nic,
+    req.body.dateOfBirth,
     req.body.phone,
-    req.body.address,
-    req.body.dateOfBirth
+    req.body.email,
+    req.body.location,
+    req.body.bio,
+    req.body.type,
+    req.body.post
   );
 
-  db.query('INSERT INTO Students SET ?', student, (err, result) => {
+  // validate the properties
+  const error = employee.validate().error;
+  if (error !== null) {
+    req.flash('error', error.details[0].message);
+    res.redirect('/employees/add');
+    return;
+  }
+
+  // add the employee to db
+  db.query('INSERT INTO Employees SET ?', employee, (err, results) => {
     if (err) throw err;
-    res.redirect('/students');
+    req.flash('success', 'Employee is successfully added');
+    res.status(201).redirect('/employees');
   });
 });
 
 /**
  * GET
- * http://localhost:3000/students/edit/1
+ * http://localhost:3000/employees/1
  */
-router.get('/edit/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   db.query(
-    'SELECT * FROM Students WHERE Id = ?',
+    'SELECT * FROM Employees WHERE Id = ?',
     req.params.id,
     (err, results) => {
       if (err) throw err;
-      res.render('student-edit-form', {
-        student: results[0]
+      res.render('employee-profile', {
+        employee: results[0]
       });
     }
   );
 });
 
-/**
- * POST
- * http://localhost:3000/students/edit
- */
-router.post('/edit', (req, res) => {
-  db.query(
-    'UPDATE Students SET FirstName=?, LastName=?, Gender=?, Phone=?, Address=?, DateOfBirth=? WHERE Id=?',
-    [
-      req.body.firstName,
-      req.body.lastName,
-      req.body.gender,
-      req.body.phone,
-      req.body.address,
-      req.body.dateOfBirth,
-      req.body.id
-    ],
-    (err, results) => {
-      if (err) throw err;
-      res.redirect('/students');
-    }
-  );
-});
-
-/**
- * DELETE
- * http://localhost:3000/students/delete/1
- */
-router.delete('/delete/:id', (req, res) => {
-  db.query(
-    'DELETE FROM Students WHERE Id = ?',
-    req.params.id,
-    (err, results) => {
-      if (err) throw err;
-      res.json({ message: 'Student deleted' });
-    }
-  );
-});
-
-// Export the router
+// export the router
 module.exports = router;
