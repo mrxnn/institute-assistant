@@ -5,7 +5,7 @@ This repository contains all the files related to the Institute Management Syste
 ## Update Notice
 
 Note that the project located in the `Server` directory is deprecated. Refer to the `Updated-Server`
-directory instead.
+directory instead. The template engine used to render html pages was changed from `handlebars` to `pug`, which exposes more features.
 
 ### Getting Started Guide (For contributors)
 
