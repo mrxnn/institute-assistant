@@ -47,3 +47,8 @@ optgroup {
 textarea {
   font-size: 1.3rem !important;
 }
+
+// limit the width of the forms
+.form.shortened {
+  max-width: 60rem !important;
+}

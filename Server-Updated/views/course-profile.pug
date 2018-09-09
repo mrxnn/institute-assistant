@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb.mb-normal
+    a.section Home
+    i.right.chevron.icon.divider
+    a.section Courses
+    i.right.chevron.icon.divider
+    .active.section Profile
+  // breadcrumb end
+  .ui.grid
+    .thirteen.wide.column
+      .profile
+        .ui.segments
+          .ui.segment
+            strong Title: 
+            |  #{course.title}
+          .ui.segment
+            strong Comment: 
+            |  #{course.description}
+          .ui.segment
+            strong Duration: 
+            |  #{course.duration} Months
+          .ui.segment
+            strong Level: 
+            |  #{course.level}
+          .ui.segment
+            strong Started: 
+            |  #{course.dateStarted}
+          .ui.segment
+            strong Max Students #: 
+            |  #{course.maximumStudents}
+    .three.wide.column
+      .vertical-container
+        a.ui.button.blue.mb-mini.padded-normal(href=`/courses/edit/${course.id}`) Edit
+        a.ui.button.red.delete-course-button.mb-mini.padded-normal(href='#' data-id=course.id) Delete
+        a.ui.button.purple.mb-mini.padded-normal(href='#') Q&amp;A
+        a.ui.button.green.mb-mini.padded-normal(href='#') +Students
+        a.ui.button.mb-mini.padded-normal(href='#') +Material
+  // articles
+  .mt-large
+    h3.heading-tertiary Course Materials
+    .ui.message
+      .header Empty
+      p
+        | This course does not have any article, material or related questions in the Q&amp;A feed yet.
+  // articles end
+  script(src="/js/course-profile.js")

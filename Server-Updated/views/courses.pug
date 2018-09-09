@@ -1,0 +1,71 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb
+    a.section Home
+    i.right.chevron.icon.divider
+    .active.section Courses
+  // breadcrumb end
+  // action buttons
+  span
+    br
+    br
+    div.mb-large
+      a.ui.button.blue.padded-normal(href='/courses/add') Add Entry
+      a.ui.button.purple.padded-normal(href='course-form.html') Reporting
+      a.ui.button.blue.padded-normal(href='course-form.html') Findings!
+      a.ui.button.green.padded-normal(href='course-form.html') Illustrates
+    div(style='display: flex;')
+      h3.heading-tertiary(style='margin-right: 1rem; margin-top: .5rem;') All
+      .ui.search
+        .ui.icon.input
+          input.prompt(placeholder='Find students...' type='text')
+          i.search.icon
+        .results
+  // action buttons end
+  // table start
+  table.ui.table
+    thead
+      tr
+        th Course
+        th Duration
+        th Level
+        th Description
+        th
+    tbody
+      for course in courses
+        tr
+        td
+          h4.ui.image.header
+            img.ui.mini.rounded.image(src='/img/avatars/avatar2.png')
+            .content
+              | #{course.title}
+              .sub.header
+                | #{course.id}
+        td #{course.duration} Months
+        td #{course.level}
+        td #{course.description}
+        td.right.aligned
+          a.ui.button(href='/courses/' + course.id) View
+    tfoot
+      tr
+        th(colspan='5')
+          .ui.right.floated.pagination.menu
+            a.icon.item
+              i.left.chevron.icon
+            a.item.active 1
+            a.item 2
+            a.item 3
+            a.item 4
+            a.icon.item
+              i.right.chevron.icon
+  // table end
+  // today
+  div(style='margin: 4rem 0;')
+    h3.heading-tertiary Scheduled for today
+    .ui.message
+      .header Spoken | 12:30
+      p There is a class scheduled today at 12:30PM.
+      a.ui.blue.button(href='#') View Details
+  // today end

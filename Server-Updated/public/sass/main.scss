@@ -1,30 +1,33 @@
 // all the variables (css and sass)
-@import "variables";
+@import 'variables';
 
 // includes resets
-@import "normalize";
+@import 'normalize';
 
 // simple utility classes
-@import "utilities";
+@import 'utilities';
 
 // basic resets and global styles
-@import "base";
+@import 'base';
 
 // typography
-@import "types";
+@import 'types';
 
 // css components
-@import "components";
+@import 'components';
+
+// alert messaging
+@import 'alert';
 
 // navigation bar of the site
-@import "navbar";
+@import 'navbar';
 
 // sidebar component
-@import "sidebar";
+@import 'sidebar';
 //@import "sidebar-fixed";
 
 // the layout of the site
-@import "layout";
+@import 'layout';
 
 // animations for the site
-@import "animations";
+@import 'animations';

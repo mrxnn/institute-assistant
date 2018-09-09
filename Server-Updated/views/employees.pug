@@ -13,13 +13,13 @@ block content
     br
     div.mb-large
       //- a.ui.button.blue(href='/employees/add') Add Entry
-      a.ui.animated.fade.blue.button(tabindex='0' href='/employees/add' style='padding:2rem;')
+      a.ui.animated.fade.blue.button.padded-normal(tabindex='0' href='/employees/add')
         .visible.content New Entry
         .hidden.content
           | Add employee
-      a.ui.button.purple(href='#' style='padding:2rem;') Reporting
-      a.ui.button.blue(href='attendance.html' style='padding:2rem;') Attendance
-      a.ui.button.green(href='#' style='padding:2rem;') Leaves
+      a.ui.button.purple.padded-normal(href='#') Reporting
+      a.ui.button.blue.padded-normal(href='attendance.html') Attendance
+      a.ui.button.green.padded-normal(href='#') Leaves
     div(style='display: flex;')
       h3.heading-tertiary(style='margin-right: 1rem; margin-top: .5rem;') All
       .ui.search
