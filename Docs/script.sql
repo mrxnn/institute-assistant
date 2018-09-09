@@ -34,3 +34,15 @@ Create table Employees
   type varchar(64) not null,
   post varchar(64) not null
 );
+
+/* Courses table */
+Create table Courses
+(
+  id int primary key auto_increment,
+  title varchar(64) not null,
+  description varchar(256) not null,
+  duration int not null,
+  level varchar(32) not null,
+  maximumStudents int not null,
+  dateStarted date not null
+);
