@@ -74,14 +74,15 @@ block content
   // actions start
   h3.heading-tertiary Common Actions
   div.mb-large
-    a.ui.animated.fade.button(tabindex='0')
+    a.ui.animated.fade.button.teal(tabindex='0' href='/employees/edit/'+employee.id)
       .visible.content Edit Employee
       .hidden.content
         | Go to Edit page
-    a.ui.button(href='#') Reporting
+    a.ui.button.red.delete-employee-button(href='#' data-id=employee.id) Remove Employee
     a.ui.button(href='#') Salary
   // actions end
   div(style='margin-bottom: 4rem')
     h3.heading-tertiary Recent Activity
     .ui.message
       | Added 5 students 2h ago.
+  script(src="/js/employee-profile.js")

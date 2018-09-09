@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb
+    a.section Home
+    i.right.chevron.icon.divider
+    a.section Employee
+    i.right.chevron.icon.divider
+    .active.section Edit Employee
+  // breadcrumb end
+  h1.heading-secondary Edit Employee
+  p.mb-normal
+    | You can edit a new employee to the system using this page. Please note that filling out all the fields marked with asterics is
+    | mandatory, and the ones without any symbol is optional to filling in.
+  div.carded
+    // form start
+    form.ui.form(action='/employees/edit', method='POST')
+
+      label.ui.label.green.tag.mb-normal Basic Information
+      .field.required
+        label Employee Id
+        input(name='id' autofocus='' required='' type='text' value=employee.id)
+      .field.required
+        label First Name
+        input(name='firstName' autofocus='' required='' type='text' value=employee.firstName)
+      .field.required
+        label Last Name
+        input(name='lastName' required='' type='text' value=employee.lastName)
+      .field.required
+        label Gender
+        input(name='gender' required='' type='text' value=employee.gender)
+      .field.required
+        label NIC
+        input(name='nic' required='' type='text' value=employee.nic)
+      .field.required
+        label Date of Birth
+        input(name='dateOfBirth' required='' type='date' value=employee.dateOfBirth)
+
+      label.ui.label.blue.tag.mb-normal.mt-large Contact Information
+      .field.required
+        label Phone
+        input(name='phone' required='' type='text' value=employee.phone)
+      .field
+        label Email
+        input(name='email' required='' type='text' value=employee.email)
+      .field.required
+        label Location
+        textarea(name="location", cols="30", rows="1") #{value=employee.location}
+      .field
+        label Bio
+        textarea(name="bio", cols="30", rows="1") #{value=employee.bio}
+
+      label.ui.label.red.tag.mb-normal.mt-large Internal Information
+      .field.required
+        label Employee Type
+        input(name='type' required='' type='text' value=employee.type) 
+      .field.required
+        label Working Post
+        input(name='post' required='' type='text' value=employee.post)
+
+      button.ui.button.mb-large.blue(type='submit') Update Employee
+  // form end
