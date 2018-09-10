@@ -3,8 +3,8 @@
   --background-dark: #292d33;
   --foreground-light: #eeeeee;
   --color-primary: $color-primary;
-  --normal-font: "Nunito";
-  --heading-font: "Circular Std Book";
+  --normal-font: 'Nunito';
+  --heading-font: 'Circular Std Book';
   --container-width: 85%;
   --container-max-width: 96rem;
   --sidebar-size: 10rem;
@@ -94,7 +94,7 @@ textarea {
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
@@ -104,7 +104,7 @@ html {
 body {
   font-family: var(--normal-font) !important;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -154,8 +154,9 @@ body {
   font-size: 1.1rem !important;
   text-transform: uppercase;
   letter-spacing: 1px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   width: 13rem;
   padding: 3rem 0;
   text-align: center;
@@ -172,8 +173,9 @@ body {
 }
 
 .shadowDepth1 {
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .circular-button {
@@ -188,11 +190,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: 50%;
   font-size: 3rem !important;
   font-weight: bold;
@@ -205,16 +207,16 @@ body {
   color: white;
   background-color: #1cd654;
   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .circular-button:active {
   -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .user-profile {
@@ -241,8 +243,8 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .vertical-container > .card-button {
@@ -266,10 +268,11 @@ body {
 .carded {
   padding: 3rem;
   -webkit-padding-after: 0rem !important;
-          padding-block-end: 0rem !important;
+  padding-block-end: 0rem !important;
   margin: 2rem 0 !important;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .alert {
@@ -298,6 +301,194 @@ body {
   border-color: #ebccd1;
 }
 
+.attendance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  -webkit-padding-after: 0rem !important;
+  padding-block-end: 0rem !important;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+}
+
+.attendance__courses {
+  background-color: #27212b;
+  width: 35%;
+  height: 100%;
+  max-width: 23rem;
+  color: white;
+}
+
+.attendance__courses p {
+  margin: 1rem;
+  font-size: 1rem;
+  display: none;
+}
+
+.attendance__course-header {
+  font-family: 'Nunito' !important;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1.3px;
+  margin: 1rem;
+  opacity: 0.8;
+  display: inline-block;
+}
+
+.attendance__course-list {
+  list-style: none;
+}
+
+.attendance__course-list-item:not(:last-child) {
+  margin-bottom: 1px;
+}
+
+.attendance__course {
+  background-color: #3e3742;
+  padding: 2rem;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.06),
+    0px 3px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.06), 0px 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+.attendance__course:hover {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.attendance__course-id {
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+.attendance__course-title {
+  margin: 0 !important;
+  display: inline-block;
+  font-size: 1.4rem !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  margin-bottom: 2rem !important;
+  opacity: 0.9;
+}
+
+.attendance__course-student-count {
+  display: block;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-family: var(--normal-font);
+  letter-spacing: 1px;
+  opacity: 0.9;
+  text-align: right;
+}
+
+.attendance__days {
+  position: absolute;
+  font-size: 1.2rem;
+  right: 37px;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+.attendance__days.disabled {
+  opacity: 0.5;
+}
+
+.attendance__today {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #00b837;
+  border-radius: 50%;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
+.attendance__not-today {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #d44a6c;
+  border-radius: 50%;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
+.attendance__students {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.attendance__student-list {
+  list-style: none;
+}
+
+.attendance__student-list-item {
+  margin-bottom: 1px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.attendance__student {
+  background-color: white;
+  height: 7rem;
+  width: 100%;
+  padding: 1.7rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.attendance__student-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: 1rem;
+}
+
+.attendance__student-name {
+  margin-right: auto;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin: 0 !important;
+}
+
+.attendance__student-id {
+  font-weight: bold;
+}
+
+.attendance__student-image {
+  height: 100%;
+}
+
+.vh-center {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .navbar {
   position: absolute;
   top: 0;
@@ -310,8 +501,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .navbar__brand {
@@ -381,15 +572,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   min-width: calc(var(--sidebar-size) + 1rem);
   cursor: pointer;
   -webkit-transition: background-color 0.2s;
@@ -412,14 +603,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-transform: uppercase;
   font-size: 1.1rem !important;
   letter-spacing: 1.2px;
@@ -443,8 +634,20 @@ body {
 }
 
 .head__main {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(108, 99, 255, 0.8)), to(rgba(70, 65, 255, 0.87))), url("../img/banner.jpg");
-  background-image: linear-gradient(to right, rgba(108, 99, 255, 0.8), rgba(70, 65, 255, 0.87)), url("../img/banner.jpg");
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(108, 99, 255, 0.8)),
+      to(rgba(70, 65, 255, 0.87))
+    ),
+    url('../img/banner.jpg');
+  background-image: linear-gradient(
+      to right,
+      rgba(108, 99, 255, 0.8),
+      rgba(70, 65, 255, 0.87)
+    ),
+    url('../img/banner.jpg');
   background-size: cover;
   background-position: bottom;
   height: calc(100vh - 5rem);
@@ -452,15 +655,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   color: var(--foreground-light);
   -webkit-box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.2);
 }
 
 .head__sub {
@@ -469,11 +672,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .head__sub svg {
@@ -500,8 +703,8 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .title-bar {
@@ -509,13 +712,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
   padding-left: 2.5rem;
   background-color: #f4f9fd;
   -webkit-box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
 }
 
 .title-bar__title {

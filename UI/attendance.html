@@ -5,114 +5,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Institute Assistant &mdash; ITP</title>
-  <!-- icon library -->
-  <link rel="stylesheet" href="libs/font-awesome/all.css">
-  <!-- semantic ui -->
-  <link rel="stylesheet" href="libs/semantic/semantic.css">
-  <!-- semantic icons -->
-  <link rel="stylesheet" href="libs/semantic/icon.css">
-  <!-- local font -->
+  <title>Document</title>
   <link rel="stylesheet" href="fonts/stylesheet.css">
-  <!-- main stylesheet -->
+  <link rel="stylesheet" href="libs/semantic/semantic.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-
-  <!-- main sidebar of the dashboard -->
-  <div class="divider-main">
-    <div class="side"></div>
-    <ul class="sidebar">
-      <li class="sidebar__item">
-        <a href="manage.html" class="sidebar__link">
-          <i class="fas fa-home"></i>
-          Home
-        </a>
-      </li>
-      <li class="sidebar__item active">
-        <a href="students.html" class="sidebar__link">
-          <i class="fas fa-graduation-cap"></i>
-          Student
-        </a>
-      </li>
-      <li class="sidebar__item">
-        <a href="employees.html" class="sidebar__link">
-          <i class="fas fa-user"></i>
-          Staff
-        </a>
-      </li>
-      <li class="sidebar__item">
-        <a href="courses.html" class="sidebar__link">
-          <i class="fas fa-book"></i>
-          Courses
-        </a>
-      </li>
-      <li class="sidebar__item">
-        <a href="events.html" class="sidebar__link">
-          <i class="fas fa-beer"></i>
-          Events
-        </a>
-      </li>
-      <li class="sidebar__item">
-        <a href="library.html" class="sidebar__link">
-          <i class="fas fa-book-open"></i>
-          Library
-        </a>
-      </li>
-      <li class="sidebar__item">
-        <a href="qna.html" class="sidebar__link">
-          <i class="fas fa-tag"></i>
-          Q&A
-        </a>
-      </li>
-      <li class="sidebar__item">
-        <a href="finance.html" class="sidebar__link">
-          <i class="fas fa-money-bill-alt"></i>
-          Finance
-        </a>
-      </li>
-    </ul>
-    <!-- sidebar end -->
-    <!-- page content start -->
-    <div class="body-content">
-      <div class="title-bar mb-normal">
-        <div class="title-bar__title">brand</div>
-        <i class="fas fa-search"></i>
-        <a class="ui image label" href="index.html">
-          <img src="img/avatars/avatar1.png"> Chanchala
-        </a>
-      </div>
-      <!-- container start -->
-      <div class="wrapper">
-        <!-- breadcrumb start -->
-        <div class="ui big breadcrumb">
-          <a class="section">Home</a>
-          <i class="right chevron icon divider"></i>
-          <div class="active section">Attendance</div>
-        </div>
-        <!-- breadcrumb end -->
-        <div style="margin-top: 4rem;">
-          <a href="#" id="student-attendance-button" class="card-button">Student Attendance</a>
-          <a href="#" id="employee-attendance-button" class="card-button">Employee Attendance</a>
-          <a href="#" id="reset-attendance-button" class="card-button">Reset Attendance</a>
-        </div>
-        <!-- table start -->
-        <div id="inject"></div>
-        <!-- table end -->
-      </div>
-      <!-- container end -->
+  <div class="attendance">
+    <div class="attendance__courses">
+      <p>You can click on the course from down below to record attendance for students.</p>
+      <ul class="attendance__course-list">
+        <li class="attendance__course-list-item">
+          <div class="attendance__course">
+            <span class="attendance__course-id">16</span>
+            <h1 class="attendance__course-title">Spoken</h1>
+            <span class="attendance__course-student-count">60 Students</span>
+            <div class="attendance__days">Tue 8:30-12:00</div>
+            <div class="attendance__today"></div>
+          </div>
+        </li>
+        <li class="attendance__course-list-item">
+          <div class="attendance__course">
+            <span class="attendance__course-id">20</span>
+            <h1 class="attendance__course-title">Grammer</h1>
+            <span class="attendance__course-student-count">123 Students</span>
+            <div class="attendance__days disabled">Wed 8:30-12:00</div>
+            <div class="attendance__not-today"></div>
+          </div>
+        </li>
+        <li class="attendance__course-list-item">
+          <div class="attendance__course">
+            <span class="attendance__course-id">88</span>
+            <h1 class="attendance__course-title">Elementory</h1>
+            <span class="attendance__course-student-count">15 Students</span>
+            <div class="attendance__days">Tue 8:30-12:00</div>
+            <div class="attendance__today"></div>
+          </div>
+        </li>
+        <li class="attendance__course-list-item">
+          <div class="attendance__course">
+            <span class="attendance__course-id">88</span>
+            <h1 class="attendance__course-title">Elementory</h1>
+            <span class="attendance__course-student-count">15 Students</span>
+            <div class="attendance__days">Tue 8:30-12:00</div>
+            <div class="attendance__today"></div>
+          </div>
+        </li>
+        <li class="attendance__course-list-item">
+          <div class="attendance__course">
+            <span class="attendance__course-id">88</span>
+            <h1 class="attendance__course-title">Elementory</h1>
+            <span class="attendance__course-student-count">15 Students</span>
+            <div class="attendance__days">Tue 8:30-12:00</div>
+            <div class="attendance__today"></div>
+          </div>
+        </li>
+      </ul>
     </div>
-    <!-- page content end -->
+    <div class="attendance__students">
+      <ul class="attendance__student-list">
+        <li class="attendance__student-list-item">
+          <div class="attendance__student">
+            <img src="/img/avatars/avatar3.png" alt="Student Image" class="attendance__student-image">
+            <div class="attendance__student-details">
+              <p class="attendance__student-name">Mayura Ramanayaka</p>
+              <p class="attendance__student-id">88</p>
+            </div>
+            <button class="ui button green">Present</button>
+            <button class="ui button red">Absent</button>
+          </div>
+        </li>
+        <li class="attendance__student-list-item">
+          <div class="attendance__student">
+            <img src="/img/avatars/avatar4.png" alt="Student Image" class="attendance__student-image">
+            <div class="attendance__student-details">
+              <p class="attendance__student-name">Dinal Maduranga</p>
+              <p class="attendance__student-id">99</p>
+            </div>
+            <button class="ui button green">Present</button>
+            <button class="ui button red">Absent</button>
+          </div>
+        </li>
+        <li class="attendance__student-list-item">
+          <div class="attendance__student">
+            <img src="/img/avatars/avatar5.png" alt="Student Image" class="attendance__student-image">
+            <div class="attendance__student-details">
+              <p class="attendance__student-name">Omesh Vishmila</p>
+              <p class="attendance__student-id">77</p>
+            </div>
+            <button class="ui button green">Present</button>
+            <button class="ui button red">Absent</button>
+          </div>
+        </li>
+        <li class="attendance__student-list-item">
+          <div class="attendance__student">
+            <img src="/img/avatars/avatar7.png" alt="Student Image" class="attendance__student-image">
+            <div class="attendance__student-details">
+              <p class="attendance__student-name">Maleesha Patali</p>
+              <p class="attendance__student-id">119</p>
+            </div>
+            <button class="ui button green">Present</button>
+            <button class="ui button red">Absent</button>
+          </div>
+        </li>
+        <li class="attendance__student-list-item">
+          <div class="attendance__student">
+            <img src="/img/avatars/avatar8.png" alt="Student Image" class="attendance__student-image">
+            <div class="attendance__student-details">
+              <p class="attendance__student-name">Chanchi Chanch</p>
+              <p class="attendance__student-id">65</p>
+            </div>
+            <button class="ui button green">Present</button>
+            <button class="ui button red">Absent</button>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-
-  <!-- jquery (used by semantic) -->
   <script src="libs/jquery/jquery-3.3.1.min.js"></script>
-  <!-- semantic ui js -->
   <script src="libs/semantic/semantic.js"></script>
-  <!-- main javascript file -->
-  <script src="js/attendance.js"></script>
-
 </body>
 
 </html>

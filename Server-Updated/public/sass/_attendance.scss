@@ -1,0 +1,166 @@
+.attendance {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding-block-end: 0rem !important;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+
+  &__courses {
+    background-color: #27212b;
+    width: 35%;
+    height: 100%;
+    max-width: 23rem;
+    // font-family: 'Circular Std Book';
+    color: white;
+
+    p {
+      margin: 1rem;
+      font-size: 1rem;
+      display: none;
+    }
+  }
+
+  &__course-header {
+    font-family: 'Nunito' !important;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1.3px;
+    margin: 1rem;
+    opacity: 0.8;
+    display: inline-block;
+  }
+
+  &__course-list {
+    list-style: none;
+  }
+
+  &__course-list-item {
+    &:not(:last-child) {
+      margin-bottom: 1px;
+    }
+  }
+
+  &__course {
+    background-color: #3e3742;
+    padding: 2rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.06), 0px 3px 6px rgba(0, 0, 0, 0.06);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+        0px 3px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
+
+  &__course-id {
+    font-size: 1.3rem;
+    opacity: 0.8;
+  }
+
+  &__course-title {
+    margin: 0 !important;
+    display: inline-block;
+    font-size: 1.4rem !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin-bottom: 2rem !important;
+    opacity: 0.9;
+  }
+
+  &__course-student-count {
+    display: block;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: var(--normal-font);
+    letter-spacing: 1px;
+    opacity: 0.9;
+    text-align: right;
+  }
+
+  &__days {
+    position: absolute;
+    font-size: 1.2rem;
+    right: 37px;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &__today {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #00b837;
+    border-radius: 50%;
+    margin-top: 1rem;
+    margin-left: auto;
+  }
+
+  &__not-today {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: rgb(212, 74, 108);
+    border-radius: 50%;
+    margin-top: 1rem;
+    margin-left: auto;
+  }
+
+  &__students {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+  }
+
+  &__student-list {
+    list-style: none;
+  }
+
+  &__student-list-item {
+    margin-bottom: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  &__student {
+    background-color: white;
+    height: 7rem;
+    width: 100%;
+    padding: 1.7rem 1rem;
+    display: flex;
+  }
+
+  &__student-details {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: 1rem;
+  }
+
+  &__student-name {
+    margin-right: auto;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 0 !important;
+  }
+
+  &__student-id {
+    font-weight: bold;
+  }
+
+  &__student-image {
+    height: 100%;
+  }
+}
+
+.vh-center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
