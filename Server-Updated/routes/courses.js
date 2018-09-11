@@ -33,7 +33,6 @@ router.get('/:id', (req, res) => {
     req.params.id,
     (err, results) => {
       if (err) throw err;
-      console.log(results);
       res.render('course-profile', {
         course: results[0]
       });
