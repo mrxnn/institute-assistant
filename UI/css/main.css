@@ -73,6 +73,10 @@ textarea {
   margin-top: 4rem !important;
 }
 
+.padded-normal {
+  padding: 2rem !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -239,6 +243,46 @@ body {
 .vertical-container > .card-button:not(:first-child) {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.quick-card {
+  border-radius: 2px;
+  padding: 4rem;
+  padding-top: 2rem;
+  color: #222;
+  position: relative;
+  font-family: 'lato';
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quick-card p {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  max-width: 50rem;
+  font-family: 'Nunito';
+}
+
+.quick-card img {
+  height: 100% !important;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  z-index: -99;
+}
+
+.quick-card i.close {
+  font-size: 1.7rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.quick-card i.close:hover {
+  opacity: 1;
 }
 
 .navbar {

@@ -11,11 +11,15 @@ block content
   span
     br
     br
-    div.mb-large
+    .mb-large.quick-card
+      i.fas.fa-times-circle.close
+      h2.heading-secondary Courses
+      p Manage courses and other related resources using quick actions menu.
+      img(src='/img/illustrations/courses.png')
       a.ui.button.blue.padded-normal(href='/courses/add') Add Entry
-      a.ui.button.purple.padded-normal(href='course-form.html') Reporting
-      a.ui.button.blue.padded-normal(href='course-form.html') Findings!
-      a.ui.button.green.padded-normal(href='course-form.html') Illustrates
+      a.ui.button.purple.padded-normal(href='#') Reporting
+      a.ui.button.blue.padded-normal(href='#') Latest Q&A
+      a.ui.button.green.padded-normal(href='#') Upcoming
     div(style='display: flex;')
       h3.heading-tertiary(style='margin-right: 1rem; margin-top: .5rem;') All
       .ui.search

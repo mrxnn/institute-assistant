@@ -51,10 +51,6 @@
   }
 }
 
-.shadowDepth1 {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
 // circular button for the qna feed
 .circular-button {
   position: fixed;
@@ -102,6 +98,7 @@
   }
 }
 
+// container for vertically stacked items
 .vertical-container {
   display: flex;
   flex-direction: column;
@@ -125,10 +122,51 @@
   }
 }
 
-// Card element wrapped outside forms
+// card element wrapped outside forms
 .carded {
   padding: 3rem;
   padding-block-end: 0rem !important;
   margin: 2rem 0 !important;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+// quick cards for each page
+.quick-card {
+  border-radius: 2px;
+  padding: 4rem;
+  padding-top: 2rem;
+  color: #222;
+  position: relative;
+  font-family: 'lato';
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.1);
+
+  p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 50rem;
+    font-family: 'Nunito';
+    margin-bottom: 2rem;
+  }
+
+  img {
+    height: 100% !important;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    z-index: -99;
+  }
+
+  i.close {
+    font-size: 1.7rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

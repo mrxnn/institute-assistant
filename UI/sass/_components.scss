@@ -93,6 +93,7 @@
   }
 }
 
+// container for vertically stacked cards
 .vertical-container {
   display: flex;
   flex-direction: column;
@@ -112,6 +113,46 @@
     &:not(:first-child) {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+    }
+  }
+}
+
+// Quick actions buttons for each page
+.quick-card {
+  border-radius: 2px;
+  padding: 4rem;
+  padding-top: 2rem;
+  color: #222;
+  position: relative;
+  font-family: 'lato';
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.1);
+
+  p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 50rem;
+    font-family: 'Nunito';
+  }
+
+  img {
+    height: 100% !important;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    z-index: -99;
+  }
+
+  i.close {
+    font-size: 1.7rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
     }
   }
 }

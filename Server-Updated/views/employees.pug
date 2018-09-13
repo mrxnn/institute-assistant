@@ -11,14 +11,14 @@ block content
   span
     br
     br
-    div.mb-large
-      //- a.ui.button.blue(href='/employees/add') Add Entry
-      a.ui.animated.fade.blue.button.padded-normal(tabindex='0' href='/employees/add')
-        .visible.content New Entry
-        .hidden.content
-          | Add employee
+    .mb-large.quick-card
+      i.fas.fa-times-circle.close
+      h2.heading-secondary Employees
+      p Manage employees and other related resources using quick actions menu.
+      img(src='/img/illustrations/employees.png')
+      a.ui.button.blue.padded-normal(href='/employees/add') Add Entry
       a.ui.button.purple.padded-normal(href='#') Reporting
-      a.ui.button.blue.padded-normal(href='attendance.html') Attendance
+      a.ui.button.blue.padded-normal(href='#') Attendance
       a.ui.button.green.padded-normal(href='#') Leaves
     div(style='display: flex;')
       h3.heading-tertiary(style='margin-right: 1rem; margin-top: .5rem;') All
