@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  // breadcrumb start
+  .ui.big.breadcrumb
+    a.section Home
+    i.right.chevron.icon.divider
+    a.section Students
+    i.right.chevron.icon.divider
+    .active.section Assign Course
+  // breadcrumb end
+  h1#ttt.heading-secondary Assign Course
+  p.mb-normal
+    | You can add a new course to the system using this page. Please note that filling out all the fields marked with asterics is
+    | mandatory, and the ones without any symbol is optional to filling in.
+  div.carded
+    // form start
+    form.ui.form(action='/students/addcourse', method='POST')
+      label.ui.label.green.tag.mb-normal Basic Information
+      .field.required
+        label Student Id
+        input(name='studentid' autofocus='' required='' type='text')
+      .field.required
+        label Course Id
+        input(name='courseid' autofocus='' required='' type='text')
+      button.ui.button.mb-large.blue(type='submit') Save
+  // form end

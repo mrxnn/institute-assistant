@@ -38,6 +38,12 @@ class Employee {
     const errors = Joi.validate(this, schema);
     return errors;
   }
+
+  
+  // Set the password for this student
+  setPassword(password) {
+    this.password = password;
+  }
 }
 
 // export the Employee model

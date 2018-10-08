@@ -40,6 +40,7 @@ app.get('/dashboard', (req, res) => res.render('dashboard'));
 app.use('/students', require('./routes/students'));
 app.use('/employees', require('./routes/employees'));
 app.use('/courses', require('./routes/courses'));
+app.use('/auth', require('./routes/auth'));
 
 // Start the server
 app.listen(3000, () => console.log('Started on http://localhost:3000'));

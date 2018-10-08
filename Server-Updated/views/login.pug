@@ -1,0 +1,61 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+  title Login
+  link(rel='stylesheet' href='/libs/semantic/semantic.css')
+  link(rel='stylesheet' href='/libs/semantic/icon.css')
+  link(rel='stylesheet' href='/fonts/stylesheet.css')
+  style(type='text/css').
+    body {
+    background-color: #DADADA;
+    }
+    body > .grid {
+    height: 100%;
+    }
+    .image {
+    margin-top: -100px;
+    }
+    .column {
+    max-width: 450px;
+    }
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-family: sans-serif !important;
+    }
+    .alert.error {
+      color: #a94442;
+      background-color: #f2dede;
+      border-color: #ebccd1;
+    }
+.ui.middle.aligned.center.aligned.grid
+  .column
+    h2.ui.teal.image.header
+      //- img(src='/img/avatars/avatar3.png').image
+      .content
+        | Log-in to your account
+    form.ui.large.form(action='/auth/login' method='POST')
+      != messages('message', locals)
+      .ui.stacked.segment
+        .field
+          .ui.left.icon.input
+            i.book.icon
+            input(type='text' name='usertype' placeholder='User Type' value='Student')
+        .field
+          .ui.left.icon.input
+            i.user.icon
+            input(type='text' name='userid' placeholder='User Id')
+        .field
+          .ui.left.icon.input
+            i.lock.icon
+            input(type='password' name='password' placeholder='Password')
+        button.ui.fluid.large.teal.submit.button(type='submit') Login
+      .ui.error.message
+    .ui.message
+      | New to us? 
+      a(href='#') Join
+

@@ -48,8 +48,10 @@ block content
   div
     a.ui.button.teal.padded-normal(href='/students/edit/' + student.id) Edit Student
     a.ui.button.red.delete-student-button.padded-normal(href='#' data-id=student.id) Remove Student
-    a.ui.button.padded-normal(href='#') Reporting
+    a.ui.button.padded-normal(href='/students/addcourse/' + student.id) Assign Course
   // actions end
-  h3.heading-tertiary.mt-large Recent Examinations
+  h3.heading-tertiary.mt-large Courses Following
   .ui.message.mb-normal
-    | This student hasn&apos;t sat for any examination since joining the academy.
+    ul
+      each course in courses
+        li= course.title

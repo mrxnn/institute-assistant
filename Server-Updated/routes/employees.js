@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+const randomString = require('randomstring');
 const express = require('express');
 const router = express.Router();
 const Employee = require('../models/Employee');
@@ -52,11 +54,28 @@ router.post('/add', (req, res) => {
     return;
   }
 
-  // add the employee to db
-  db.query('INSERT INTO Employees SET ?', employee, (err, results) => {
+  // Generate the default password
+  let defaultPassword = randomString.generate({
+    length: 12,
+    charset: 'alphabetic'
+  });
+
+  // Hash the password
+  bcrypt.genSalt(10, (err, salt) => {
     if (err) throw err;
-    req.flash('success', 'Employee is successfully added');
-    res.status(201).redirect('/employees');
+    bcrypt.hash(defaultPassword, salt, (err, hash) => {
+      if (err) throw err;
+      
+      // Set the hashed password
+      employee.setPassword(hash);
+
+      // add the employee to db
+      db.query('INSERT INTO Employees SET ?', employee, (err, results) => {
+        if (err) throw err;
+        req.flash('success', 'Employee is successfully added with password = ' + defaultPassword);
+        res.status(201).redirect('/employees');
+      });
+    });
   });
 });
 

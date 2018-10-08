@@ -13,7 +13,7 @@ Create table Students
   nic varchar(12) not null,
   location varchar(128) not null,
   dateOfBirth date not null,
-  password varchar(16) not null,
+  password varchar(256) not null,
   bio varchar(256)
 );
 
@@ -29,7 +29,7 @@ Create table Employees
   nic varchar(12) not null,
   location varchar(128) not null,
   dateOfBirth date not null,
-  password varchar(16) not null,
+  password varchar(256) not null,
   bio varchar(256),
   type varchar(64) not null,
   post varchar(64) not null
@@ -45,4 +45,12 @@ Create table Courses
   level varchar(32) not null,
   maximumStudents int not null,
   dateStarted date not null
+);
+
+/* Course Students */
+Create table StudentCourses
+(
+  studentid int references Students (id),
+  courseid int references Courses (id),
+  constraint pk_student_courses primary key (studentid, courseid)
 );

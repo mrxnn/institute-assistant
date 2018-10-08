@@ -20,7 +20,7 @@ head
     h2 Login to System
   .content
     .ui.segment
-      form#login-form.ui.form
+      form#login-form.ui.form(action='/auth/login', method='POST')
         .field
           label User Id
           input(name='userid' placeholder='User Id' type='text')
@@ -48,7 +48,7 @@ nav.navbar
           a.navbar__link(href='#') About
         li.navbar__nav
           a.navbar__link(href='#') Contact
-      a.navbar__login.login-button(href='#') Sign In
+      a.navbar__login(href='/auth/login') Sign In
 // main header
 header.head
   .head__main

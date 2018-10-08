@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+const randomString = require('randomstring');
 const express = require('express');
 const router = express.Router();
 const db = require('../relational/database');
@@ -33,9 +35,20 @@ router.get('/:id', (req, res) => {
     req.params.id,
     (err, results) => {
       if (err) throw err;
-      res.render('student-profile', {
-        student: results[0]
-      });
+
+      // load the courses
+      db.query(
+        'SELECT c.title FROM Courses c, StudentCourses s WHERE s.courseid = c.id AND s.studentid = ?',
+        req.params.id,
+        (err, coursesResult) => {
+          if (err) throw err;
+
+          res.render('student-profile', {
+            student: results[0],
+            courses: coursesResult
+          });
+        }
+      );
     }
   );
 });
@@ -66,11 +79,42 @@ router.post('/add', (req, res) => {
     return;
   }
 
-  // Add the student
-  db.query('INSERT INTO Students SET ?', student, (err, result) => {
+  // Generate the default password
+  let defaultPassword = randomString.generate({
+    length: 12,
+    charset: 'alphabetic'
+  });
+
+  // Hash the password
+  bcrypt.genSalt(10, (err, salt) => {
     if (err) throw err;
-    req.flash('success', 'Student is successfully added');
-    res.status(201).redirect('/students');
+    bcrypt.hash(defaultPassword, salt, (err, hash) => {
+      if (err) throw err;
+
+      // Set the hashed password
+      student.setPassword(hash);
+
+      // Add the student to db
+      db.query('INSERT INTO Students SET ?', student, (err, result) => {
+        if (err) throw err;
+
+        // Add the course id
+        db.query(
+          'INSERT INTO StudentCourses SET ?',
+          { studentid: result.insertId, courseid: 1 },
+          (err, resultts) => {
+            if (err) throw err;
+
+            req.flash(
+              'success',
+              'Student is successfully added with the password = ' +
+                defaultPassword
+            );
+            res.status(201).redirect('/students');
+          }
+        );
+      });
+    });
   });
 });
 
@@ -96,7 +140,8 @@ router.get('/edit/:id', (req, res) => {
  * http://localhost:3000/students/edit
  */
 router.post('/edit', (req, res) => {
-  db.query('UPDATE Students SET firstName=?, lastName=?, gender=?, nic=?, dateOfBirth=?, phone=?, email=?, location=?, bio=? WHERE id=?',
+  db.query(
+    'UPDATE Students SET firstName=?, lastName=?, gender=?, nic=?, dateOfBirth=?, phone=?, email=?, location=?, bio=? WHERE id=?',
     [
       req.body.firstName,
       req.body.lastName,
@@ -108,12 +153,13 @@ router.post('/edit', (req, res) => {
       req.body.location,
       req.body.bio,
       req.body.id
-    ], (err, results) => {
-      if (err)
-        throw err;
-      req.flash('success', 'Student is successfully updated')
+    ],
+    (err, results) => {
+      if (err) throw err;
+      req.flash('success', 'Student is successfully updated');
       res.redirect('/students');
-    });
+    }
+  );
 });
 
 /**
@@ -128,6 +174,35 @@ router.delete('/delete/:id', (req, res) => {
       if (err) throw err;
       req.flash('success', 'Student is successfully removed');
       res.status(200).json({ message: 'Student deleted' });
+    }
+  );
+});
+
+/**
+ * GET
+ * http://localhost:3000/students/addcourse/
+ */
+router.get('/addcourse/:id', (req, res) => {
+  res.render('assigncourseform', {
+    studentid: req.params.id
+  });
+});
+
+/**
+ * POST
+ * http://localhost:3000/students/addcourse/
+ */
+router.post('/addcourse', (req, res) => {
+  db.query(
+    'INSERT INTO StudentCourses SET ?',
+    {
+      studentid: req.body.studentid,
+      courseid: req.body.courseid
+    },
+    (err, results) => {
+      if (err) throw err;
+      req.flash('success', 'Course is successfully assigned');
+      res.redirect('/students/' + req.body.studentid);
     }
   );
 });
